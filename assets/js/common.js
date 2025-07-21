@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     home.addEventListener("click",() => {
       home.classList.add("color-active");
-      blog, contacts.classList.remove("color-acitve");
+      blog.classList.remove("color-active");
+      contacts.classList.remove("color-active");
       homeHr.classList.add("line");
       blogHr.classList.remove("line");
       contactsHr.classList.remove("line");
@@ -37,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     blog.addEventListener("click", () => {
       blog.classList.add("color-active");
-      home, contacts.classList.remove("color-acitve");
+      home.classList.remove("color-active");
+      contacts.classList.remove("color-active");
       homeHr.classList.remove("line");
       blogHr.classList.add("line");
       contactsHr.classList.remove("line");
@@ -45,7 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
      contacts.addEventListener("click", () => {
       contacts.classList.add("color-active");
-      home, blog.classList.remove("color-acitve");
+      home.classList.remove("color-active");
+      blog.classList.remove("color-active");
       homeHr.classList.remove("line");
       blogHr.classList.remove("line");
       contactsHr.classList.add("line");
