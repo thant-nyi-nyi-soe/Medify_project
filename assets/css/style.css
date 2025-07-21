@@ -50,6 +50,8 @@ body {
 }
 .pages-container {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .pages-dropdown {
