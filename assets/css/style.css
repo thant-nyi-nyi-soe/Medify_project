@@ -10,6 +10,7 @@ Top Page
 body {
   font-family: "Ubuntu", sans-serif;
   padding-top: 90px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .header-container {
   position: fixed;
@@ -106,68 +107,23 @@ body {
   background-color: #ffffff;
   border-radius: 2px;
 }
-.back-button {
+.close-button {
   display: none;
 }
-.sidebar {
-  display: none;
-  background-color: #1e1e1e;
-  margin: 0 auto;
-  height: 100vh;
-  max-width: 401px;
-  width: 100%;
-  padding: 30px 42px 20px 30px;
 
+.dimmed {
   position: fixed;
-  top: 0;
-  left: 0;
-
-  z-index: 2;
+  inset: 0; /* covers full viewport */
+  background-color: rgba(0, 0, 0, 0.5); /* 50% black dim */
+  transition: opacity 0.3s ease;
+  z-index: 999;
 }
-
-.sidebar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.back-button {
-  display: block;
-  color: white;
-  font-size: 26px;
-  font-family: "Noto Sans JP";
-}
-.sidebar-menu a {
-  width: 100%;
-  color: #ffffff;
-  font-size: 16px;
-}
-.sidebar-menu a {
-  padding: 15px 0;
-  cursor: pointer;
-}
-.pages {
-  padding: 17px 0;
-}
-.home-hr,
-.blog-hr,
-.contacts-hr {
-  display: none;
-  border: solid 2px #ffffff;
-  max-width: 50px;
-  margin: 0;
-  padding: 0;
-}  
-.line {
-  display: block;
-}
-.color-active {
-  color: blue;
-}
-  
 @media screen and (max-width: 768px) {
   .header-container {
-    background-color: #000000;
+    background-color: rgba(49, 49, 49, 1);
+  }
+  .header-hidden {
+    display: none;
   }
   .header-right {
     display: none;
@@ -187,19 +143,98 @@ body {
   }
   .sp-logo {
     display: block;
-    height: 40px;
+    height: 50px;
   }
-  /* === SIDE BAR === */
-  .show {
-    display: block;
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  display: block;
+  background-color: #1e1e1e;
+  margin: 0 auto;
+  height: 100vh;
+  max-width: 401px;
+  width: 100%;
+  padding: 30px 42px 20px 30px;
+
+  position: fixed;
+  top: 0;
+  left: -473px;
+
+  z-index: 1000;
+  transition: transform 0.3 ease;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.close-button {
+  display: block;
+  color: white;
+  font-size: 26px;
+  font-family: "Noto Sans JP";
+}
+.sidebar-menu a {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 15px 0;
+}
+.pages-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pages-arrow {
+  width: 8px;
+  height: 8px;
+  border-right: solid 2px white;
+  border-top: solid 2px white;
+  transform: rotate(45deg);
+}
+.arrow-rotate {
+  transform: rotate(135deg);
+}
+.pages-list {
+  display: none;
+  padding-left: 15px;
+}
+.show-list {
+  display: block;
+}
+
+.home-hr,
+.blog-hr,
+.contacts-hr {
+  display: none;
+  border: solid 2px #ffffff;
+  max-width: 50px;
+  width: 100%;
+}  
+.line {
+  display: block;
+}
+.color-active {
+  color: blue;
+}
+.show {
+    transform: translate(473px);
+    transition: transform 0.3s ease;
   }
+@media screen and (max-width: 768px) {
   .pages-wrapper {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  
+}
+@media screen and (min-width: 768px) {
+  .sidebar-header {
+    justify-content: start;
+  }
 }
 
 
@@ -235,7 +270,7 @@ body {
   transform: translate(-75%, -50%);
 }
 .first-slider-content h2 {
-  font-family: "Ubundu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 72px;
   color: #0a3380;
   max-width: 600px;
@@ -245,8 +280,7 @@ body {
   color: #54ced4;
 }
 .first-slider-content p {
-  font-family: "Nunito";
-  font-family: "Ubundu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 18px;
   color: #0a3380;
   max-width: 700px;
@@ -260,7 +294,7 @@ body {
 }
 
 .second-slider-content h2 {
-  font-family: "Ubundu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 72px;
   color: #0a3380;
   text-align: right;
@@ -271,8 +305,7 @@ body {
   color: #54ced4;
 }
 .second-slider-content p {
-  font-family: "Nunito";
-  font-family: "Ubundu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 18px;
   text-align: right;
   color: #0a3380;
@@ -285,7 +318,7 @@ body {
   transform: translate(-75%, -50%);
 }
 .third-slider-content h2 {
-  font-family: "Ubundu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 72px;
   color: #0a3380;
   max-width: 700px;
@@ -295,8 +328,7 @@ body {
   color: #54ced4;
 }
 .third-slider-content p {
-  font-family: "Nunito";
-  font-family: "Ubundu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 18px;
   color: #0a3380;
   max-width: 700px;
@@ -429,16 +461,14 @@ body {
   justify-content: center;
   column-gap: 30px;
   row-gap: 20px;
-  flex-wrap: wrap;
-
   padding: 20px;
+}
+.options-img-container {
+  max-width: 349.5px;
 }
 .options-img-container img {
   border-radius: 20px;
   object-fit: contain;
-}
-.options-img-container {
-  max-width: 406px;
 }
 .left-side-ad {
   font-size: 32px;
@@ -470,7 +500,14 @@ body {
   background-color: #f9f9f9;
   width: 100%;
 }
-
+@media screen and (max-width: 1000px) {
+  .options-container {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 768px) {
+  
+}
 
 /*=== STATS BAR ===*/
 
@@ -484,7 +521,7 @@ body {
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 70px 70px;
 }
@@ -545,7 +582,7 @@ body {
   margin: 10px 0;
 }
 .about-me-text-container p {
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
   min-width: 520px;
   color: #3b4964;
@@ -554,7 +591,7 @@ body {
   margin-bottom: 20px;
 }
 .about-me {
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 14px;
   color: #ff9e21 !important;
 }
@@ -604,25 +641,20 @@ body {
   max-width: 800px;
   margin: 0 auto 30px;
   text-align: center;
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
   color: #ffffff;
 }
-
-
 .info-cards-container {
   display: flex;
   justify-content: center; 
-  flex-wrap: wrap;
   gap: 50px;
 }
 .service-card {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 36px;
-
-  min-width: 295px;
-  max-width: 373px;
+  max-width: 339px;
 }
 .service-card img {
   max-width: 55px;
@@ -637,14 +669,15 @@ body {
 }
 .card-paragraph {
   text-align: center;
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
   color: #3b4964;
   line-height: 1.5;
 }
-@media screen and (max-width: 1024px) {
-  .service-card {
-    min-width: 339.5px;
+
+@media screen and (max-width: 1000px) {
+  .info-cards-container {
+    flex-wrap: wrap;
   }
 }
 @media screen and (max-width: 768px) {
@@ -693,14 +726,14 @@ body {
   color: #0a3380;
 }
 .why-choose-text-container p {
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
   max-width: 550px;
   line-height: 1.5;
   color: #3b4964;
 }
 .why-choose {
-  font-family: "Ubuntu";
+  font-family: "Ubuntu", sans-serif;
   font-size: 14px;
   color: #ff9e21 !important;
 }
@@ -719,3 +752,7 @@ body {
     max-width: 100%;
     margin: 0 auto;
   }
+  .why-choose-text-container p {
+    max-width: 100%;
+  }
+}
