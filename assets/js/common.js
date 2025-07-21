@@ -36,13 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     }
 
-    const home = document.querySelector(".sidebar-home");
-    const blog = document.querySelector(".sidebar-blog");
-    const contacts = document.querySelector(".sidebar-contacts");
+    // const home = document.querySelector(".sidebar-home");
+    // const blog = document.querySelector(".sidebar-blog");
+    // const contacts = document.querySelector(".sidebar-contacts");
 
-    const homeHr = document.querySelector(".home-option");
-    const blogHr = document.querySelector(".blog-hr");
-    const contactsHr = document.querySelector(".contacts-hr");
+    // const homeHr = document.querySelector(".home-option");
+    // const blogHr = document.querySelector(".blog-hr");
+    // const contactsHr = document.querySelector(".contacts-hr");
 
     // home.addEventListener("click",() => {
     //   home.classList.add("color-active");
@@ -76,20 +76,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     arrow.addEventListener("click", () => {
       arrow.classList.toggle("arrow-rotate");
-
       arrowToggle();
     });
 
-      
     const sidebarPages = document.querySelector(".sidebar-pages");
 
     sidebarPages.addEventListener("click", () => {
       arrow.classList.toggle("arrow-rotate");
-
       arrowToggle();
     });
 
-     function arrowToggle() {
+    function arrowToggle() {
       if (arrow.classList.contains("arrow-rotate")) {
         pagesList.classList.add("show-list");
       }

@@ -15,9 +15,8 @@ body {
 .header-container {
   position: fixed;
   top: 0;
-  left :0;
+  left: 0;
   right: 0;
-
   z-index: 1;
   background-color: #ffffff;
 }
@@ -28,7 +27,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  
 }
 .logo {
   width: 171px;
@@ -96,7 +94,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 6px; 
+  gap: 6px;
   cursor: pointer;
 }
 
@@ -212,7 +210,7 @@ body {
   border: solid 2px #ffffff;
   max-width: 50px;
   width: 100%;
-}  
+}
 .line {
   display: block;
 }
@@ -220,9 +218,9 @@ body {
   color: blue;
 }
 .show {
-    transform: translate(473px);
-    transition: transform 0.3s ease;
-  }
+  transform: translate(473px);
+  transition: transform 0.3s ease;
+}
 @media screen and (max-width: 768px) {
   .pages-wrapper {
     width: 100%;
@@ -236,7 +234,6 @@ body {
     justify-content: start;
   }
 }
-
 
 /*=== WELCOME SLIDER ===*/
 .welcome-slider {
@@ -403,7 +400,6 @@ body {
   margin-bottom: 15px;
 }
 .benefits-container {
-  
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 80px;
@@ -440,7 +436,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .benefits-whole-container {
-  padding: 40px 20px;
+    padding: 40px 20px;
   }
   .left-side-ad {
     margin-bottom: 20px;
@@ -506,7 +502,6 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
-  
 }
 
 /*=== STATS BAR ===*/
@@ -600,7 +595,7 @@ body {
     flex-direction: column;
     gap: 30px;
   }
-  .about-me-text-container p{
+  .about-me-text-container p {
     min-width: unset;
   }
 }
@@ -647,7 +642,7 @@ body {
 }
 .info-cards-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   gap: 50px;
 }
 .service-card {
@@ -683,10 +678,9 @@ body {
 @media screen and (max-width: 768px) {
   .service-card {
     min-width: unset;
-    max-width:  627px;
+    max-width: 627px;
   }
 }
-
 
 /* === WHY CHOOSE ME? === */
 .why-choose-background {
@@ -721,7 +715,7 @@ body {
   justify-content: space-between;
   margin: 20px 0;
 }
-.strengths-tabs>div p{
+.strengths-tabs > div p {
   font-size: 18px;
   color: #0a3380;
 }
