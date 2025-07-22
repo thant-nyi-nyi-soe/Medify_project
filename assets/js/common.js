@@ -1,118 +1,191 @@
 // Your JavaScript code goes here
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   fetch('header.html')
   .then(res => res.text())
   .then(html => {
     document.querySelector('header').innerHTML = html;
     
-    const hamburger = document.querySelector(".hamburger-menu");
-    const sidebar = document.querySelector(".sidebar");
-    const header = document.querySelector(".header-container"); 
-    const overlay = document.querySelector(".overlay");
+    const hamburger = document.querySelector('.hamburger-menu');
+    const sidebar = document.querySelector('.sidebar');
+    const header = document.querySelector('.header-container'); 
+    const overlay = document.querySelector('.overlay');
 
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
 
       hamburgerToggle();
     });
 
-    const back = document.querySelector(".close-button");
-    back.addEventListener("click", () => {
-      hamburger.classList.toggle("active");  
+    const back = document.querySelector('.close-button');
+    back.addEventListener('click', () => {
+      hamburger.classList.toggle('active');  
 
       hamburgerToggle();
     });
 
     function hamburgerToggle() {
-      if (hamburger.classList.contains("active")) {
-      sidebar.classList.add("show");
-      header.classList.add("header-hidden");
-      overlay.classList.add("dimmed");
-    } 
-    else {
-      sidebar.classList.remove("show");
-      header.classList.remove("header-hidden");
-      overlay.classList.remove("dimmed");
+      if (hamburger.classList.contains('active')) {
+      sidebar.classList.add('show');
+      header.classList.add('header-hidden');
+      overlay.classList.add('dimmed');
+      } 
+      else {
+        sidebar.classList.remove('show');
+        header.classList.remove('header-hidden');
+        overlay.classList.remove('dimmed');
+      }
     }
+    //---------------------------------------
+    // const pageInfo = {
+    //   homePage: false,
+    //   blogPage: false,
+    //   contactsPage: false
+    // }
+    // const home = document.querySelector('.sidebar-home');
+    // const blog = document.querySelector('.sidebar-blog');
+    // const contacts = document.querySelector('.sidebar-contacts');
+
+    // const onHomePage = JSON.parse(localStorage.getItem('homePage'));
+    // const onBlogPage = JSON.parse(localStorage.getItem('homePage'));
+    // const onContactsPage = JSON.parse(localStorage.getItem('homePage'));
+
+    // if (onHomePage == true) {
+    //   home.classList.add('bottom-border-active');
+    //   blog.classList.remove('bottom-border-active');
+    //   contacts.classList.remove('bottom-border-active');
+    //   console.log(onHomePage);
+    // } 
+    // else if (onBlogPage == true) {
+    //   home.classList.remove('bottom-border-active');
+    //   blog.classList.add('bottom-border-active');
+    //   contacts.classList.remove('bottom-border-active');
+    // }
+    // else if (onContactsPage == true) {
+    //   home.classList.remove('bottom-border-active');
+    //   blog.classList.remove('bottom-border-active');
+    //   contacts.classList.add('bottom-border-active');
+    // }
+
+    // home.addEventListener('click',() => {
+    //   pageInfo.homePage = true;
+    //   localStorage.setItem('homePage', pageInfo.homePage);
+    // });
+
+    // blog.addEventListener('click', () => {
+    //   pageInfo.blogPage = true;
+    //   pageInfo.home = false;
+    //   pageInfo.contactsPage = false;
+    //   console.log('blogPage: '+pageInfo.blogPage);
+    //   localStorage.setItem('blogPage', pageInfo.blogPage);
+    // });
+
+    // contacts.addEventListener('click', () => {
+    //   pageInfo.contactsPage = true;
+    //   localStorage.setItem('contactsPage', pageInfo.contactsPage);
+    // });
+
+ const tabs = document.querySelectorAll('.tab');
+  
+// local Storage Done
+  const pageInfo = {
+    home: false,
+    blog: false,
+    contacts: false
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const pageID = tab.id;
+
+      // Reset all pages to false
+      for (let key in pageInfo) {
+        pageInfo[key] = (key === pageID);
+      }
+
+      // Save to localStorage
+      localStorage.setItem("pageInfo", JSON.stringify(pageInfo));
+    });
+  });
+
+
+  // Retrieve saved state from localStorage
+const stored = JSON.parse(localStorage.getItem("pageInfo"));
+
+// Check which page is true and apply 'underline' class
+if (stored) {
+  for (let key in stored) {
+    if (stored[key]) {
+      document.getElementById(key)?.classList.add("underlined") ;
     }
+  }
+}
 
-    // const home = document.querySelector(".sidebar-home");
-    // const blog = document.querySelector(".sidebar-blog");
-    // const contacts = document.querySelector(".sidebar-contacts");
 
-    // const homeHr = document.querySelector(".home-option");
-    // const blogHr = document.querySelector(".blog-hr");
-    // const contactsHr = document.querySelector(".contacts-hr");
 
-    // home.addEventListener("click",() => {
-    //   home.classList.add("color-active");
-    //   blog.classList.remove("color-active");
-    //   contacts.classList.remove("color-active");
-    //   homeHr.classList.add("line");
-    //   blogHr.classList.remove("line");
-    //   contactsHr.classList.remove("line");
-    // });
 
-    // blog.addEventListener("click", () => {
-    //   blog.classList.add("color-active");
-    //   home.classList.remove("color-active");
-    //   contacts.classList.remove("color-active");
-    //   homeHr.classList.remove("line");
-    //   blogHr.classList.add("line");
-    //   contactsHr.classList.remove("line");
-    // });
+    // local Storage Done
 
-    //  contacts.addEventListener("click", () => {
-    //   contacts.classList.add("color-active");
-    //   home.classList.remove("color-active");
-    //   blog.classList.remove("color-active");
-    //   homeHr.classList.remove("line");
-    //   blogHr.classList.remove("line");
-    //   contactsHr.classList.add("line");
-    // });
+    
+    
+    // function toggleAll() {
 
-    const arrow = document.querySelector(".pages-arrow");
-    const pagesList = document.querySelector(".pages-list");
+    //   tabs.forEach((tab) => {
+    //   tab.classList.toggle("underlined");   
+    //   });
+    // }
 
-    arrow.addEventListener("click", () => {
-      arrow.classList.toggle("arrow-rotate");
+    // tabs.forEach(tab => {
+    //   tab.addEventListener('click', () => {
+    //     const targetStatus = tab.dataset.target;
+    //     targetStatus ='active';
+    //     // if ()
+
+    //   })
+    // })
+
+    // toggleAll();
+
+  
+
+    //-------
+    const arrow = document.querySelector('.pages-arrow');
+    const pagesList = document.querySelector('.pages-list');
+
+    arrow.addEventListener('click', () => {
+      arrow.classList.toggle('arrow-rotate');
       arrowToggle();
     });
 
-    const sidebarPages = document.querySelector(".sidebar-pages");
+    const sidebarPages = document.querySelector('.sidebar-pages');
 
-    sidebarPages.addEventListener("click", () => {
-      arrow.classList.toggle("arrow-rotate");
+    sidebarPages.addEventListener('click', () => {
+      arrow.classList.toggle('arrow-rotate');
       arrowToggle();
     });
 
     function arrowToggle() {
-      if (arrow.classList.contains("arrow-rotate")) {
-        pagesList.classList.add("show-list");
+      if (arrow.classList.contains('arrow-rotate')) {
+        pagesList.classList.add('show-list');
       }
       else {
-        pagesList.classList.remove("show-list");
+        pagesList.classList.remove('show-list');
       }
     }
 
   });
-  
-  
-
-  
 });
 
 
 
 // Your jQuery code goes here
 $(function () {
-  $(".welcome-slider").slick({
+  $('.welcome-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
     autoplay: true,
     speed: 3000,
-    cssEase: "linear",
+    cssEase: 'linear',
     pauseOnHover: true,
     arrows: false,
     dots: false,
@@ -120,8 +193,8 @@ $(function () {
   });
 
   //Your code here
-  $("button").on("click", () => {
-    console.log("Hello");
+  $('button').on('click', () => {
+    console.log('Hello');
   });
 });
 ;

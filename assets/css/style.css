@@ -29,7 +29,6 @@ body {
   padding: 0 20px;
 }
 .logo {
-  width: 171px;
   height: 50px;
 }
 .sp-logo {
@@ -42,10 +41,17 @@ body {
 
 .header-right > a,
 .pages {
-  padding: 37px 0;
+  padding: 37px 0 33px;
   color: #0a3380;
   font-size: 16px;
   font-weight: bold;
+  border-bottom: solid 4px transparent;
+}
+.header-right > a:hover,
+.pages:hover {
+  border-bottom: solid 4px  #299cff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .pages-container {
   position: relative;
@@ -175,10 +181,21 @@ body {
   font-size: 26px;
   font-family: "Noto Sans JP";
 }
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+}
 .sidebar-menu a {
+  display: inline-block;
+  width: fit-content;
   color: #ffffff;
   font-size: 16px;
-  padding: 15px 0;
+  padding: 15px 0 11px;
+}
+.underlined {
+  border-bottom: solid 4px  #299cff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 .pages-line {
   display: flex;
@@ -191,18 +208,19 @@ body {
   border-right: solid 2px white;
   border-top: solid 2px white;
   transform: rotate(45deg);
+  transition: transform 0.3s ease;
 }
 .arrow-rotate {
   transform: rotate(135deg);
 }
 .pages-list {
   display: none;
+  flex-direction: column;
   padding-left: 15px;
 }
 .show-list {
-  display: block;
+  display: flex;
 }
-
 .home-hr,
 .blog-hr,
 .contacts-hr {
