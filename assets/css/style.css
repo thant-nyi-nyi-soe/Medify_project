@@ -801,7 +801,21 @@ body {
 
 
 /* === ALLIANCE SLIDER === */
-.alliance-slider-container {
+.alliance-slider {
+  width: 100%;
   display: flex;
-  gap: 20px;
+  margin: 102px 0 90px 0;
+}
+.alliance-slider> div {
+  width: 200px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: invert(1);
+}
+.alliance-slider img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
 }

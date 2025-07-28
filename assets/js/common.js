@@ -198,6 +198,17 @@ $(function () {
     fade: true,
   });
 
+ $('.alliance-slider').slick({
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  infinite: true,
+  autoplay: true,
+  speed: 3000,
+  dot: false,
+  arrow: false,
+  pauseOnHover: false,
+});
+
   //Your code here
   $('button').on('click', () => {
     console.log('Hello');
