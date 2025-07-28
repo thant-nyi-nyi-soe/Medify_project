@@ -221,14 +221,7 @@ body {
 .show-list {
   display: flex;
 }
-.home-hr,
-.blog-hr,
-.contacts-hr {
-  display: none;
-  border: solid 2px #ffffff;
-  max-width: 50px;
-  width: 100%;
-}
+
 .line {
   display: block;
 }
@@ -601,7 +594,7 @@ body {
   color: #3b4964;
 }
 .first-paragraph {
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 .about-me {
   font-family: "Ubuntu", sans-serif;
@@ -716,11 +709,11 @@ body {
   padding: 20px 0;
   background-color: #ffffff;
   border-radius: 15px;
-  padding: 40px 20px;
+  padding: 60px 30px;
   max-width: 575px;
   margin: 0 auto 0 50%;
 }
-.why-choose-text-container h2 {
+.why-choose-text-container h3 {
   color: #0a3380;
   font-size: 42px;
   font-weight: bold;
@@ -728,14 +721,37 @@ body {
   margin: 20px 0;
 }
 .strengths-tabs {
-  max-width: 75%;
   display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
+  padding: 5px 43px 20px 0;
 }
-.strengths-tabs > div p {
+.strengths-tabs > div {
+  flex: 1;
+  width: 100%;
+}
+.tab-button {
+  text-align: center;
   font-size: 18px;
+  font-weight: bold;
   color: #0a3380;
+  opacity: 0.3;
+}
+.opacity-reduced {
+  opacity: 0.4;
+}
+.bars-container {
+  padding-right: 43px;
+  width: 100%;
+  height: 3px;
+  display: flex;
+}
+.bar {
+  flex: 1;
+}
+.opacity-added {
+  opacity: 1;
+}
+.orange-underline {
+  border-bottom: solid 3px #ff9e21;
 }
 .why-choose-text-container p {
   font-family: "Nunito", sans-serif;
@@ -749,10 +765,24 @@ body {
   font-size: 14px;
   color: #ff9e21 !important;
 }
-.orange-bar {
-  background-color: orange;
-  height: 3px;
-  width: 100%;
+.strengths-text-container {
+  display: none;
+}
+.show-paragraph {
+  display: block;
+  transform: translateY(0px);
+  opacity: 1;
+  animation: slideUp 0.7s ease;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 1024px) {
   .why-choose-text-container {
@@ -767,4 +797,11 @@ body {
   .why-choose-text-container p {
     max-width: 100%;
   }
+}
+
+
+/* === ALLIANCE SLIDER === */
+.alliance-slider-container {
+  display: flex;
+  gap: 20px;
 }
