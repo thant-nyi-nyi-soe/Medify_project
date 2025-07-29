@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((html) => {
       document.querySelector("header").innerHTML = html;
 
+      /* MAKING HAMBURGER BUTTON ACTIVE */
       const hamburger = document.querySelector(".hamburger-menu");
       const sidebar = document.querySelector(".sidebar");
       const header = document.querySelector(".header-container");
@@ -34,58 +35,26 @@ document.addEventListener("DOMContentLoaded", () => {
           overlay.classList.remove("dimmed");
         }
       }
-      //---------------------------------------
-      // const pageInfo = {
-      //   homePage: false,
-      //   blogPage: false,
-      //   contactsPage: false
-      // }
-      // const home = document.querySelector('.sidebar-home');
-      // const blog = document.querySelector('.sidebar-blog');
-      // const contacts = document.querySelector('.sidebar-contacts');
+      //----------------
 
-      // const onHomePage = JSON.parse(localStorage.getItem('homePage'));
-      // const onBlogPage = JSON.parse(localStorage.getItem('homePage'));
-      // const onContactsPage = JSON.parse(localStorage.getItem('homePage'));
+      /* MAKING SLIDER BUTTONS WORK */
+      const leftSlide = document.querySelector(".slider-left-arrow-button");
 
-      // if (onHomePage == true) {
-      //   home.classList.add('bottom-border-active');
-      //   blog.classList.remove('bottom-border-active');
-      //   contacts.classList.remove('bottom-border-active');
-      //   console.log(onHomePage);
-      // }
-      // else if (onBlogPage == true) {
-      //   home.classList.remove('bottom-border-active');
-      //   blog.classList.add('bottom-border-active');
-      //   contacts.classList.remove('bottom-border-active');
-      // }
-      // else if (onContactsPage == true) {
-      //   home.classList.remove('bottom-border-active');
-      //   blog.classList.remove('bottom-border-active');
-      //   contacts.classList.add('bottom-border-active');
-      // }
+      leftSlide.addEventListener("click", () => {
+        
+      });
 
-      // home.addEventListener('click',() => {
-      //   pageInfo.homePage = true;
-      //   localStorage.setItem('homePage', pageInfo.homePage);
-      // });
+      const rightSlide = document.querySelector(".slider-right-arrow-button");
 
-      // blog.addEventListener('click', () => {
-      //   pageInfo.blogPage = true;
-      //   pageInfo.home = false;
-      //   pageInfo.contactsPage = false;
-      //   console.log('blogPage: '+pageInfo.blogPage);
-      //   localStorage.setItem('blogPage', pageInfo.blogPage);
-      // });
+      rightSlide.addEventListener("click", () => {
+        
+      });
 
-      // contacts.addEventListener('click', () => {
-      //   pageInfo.contactsPage = true;
-      //   localStorage.setItem('contactsPage', pageInfo.contactsPage);
-      // });
+      //----------------
 
+      /* SIDEBAR UNDERLINE ON EVERY PAGE */
       const tabs = document.querySelectorAll(".tab");
 
-      // local Storage Done
       const pageInfo = {
         home: false,
         blog: false,
@@ -96,21 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
         tab.addEventListener("click", () => {
           const pageID = tab.id;
 
-          // Reset all pages to false
           for (let key in pageInfo) {
             pageInfo[key] = key === pageID;
-            console.log(pageInfo[key]);
           }
 
-          // Save to localStorage
           localStorage.setItem("pageInfo", JSON.stringify(pageInfo));
         });
       });
 
-      // Retrieve saved state from localStorage
       const stored = JSON.parse(localStorage.getItem("pageInfo"));
 
-      // Check which page is true and apply 'underline' class
       if (stored) {
         for (let key in stored) {
           if (stored[key]) {
@@ -119,8 +83,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
+      /* MAKING STRENGTHS TABS INTERACTIVE */
       const tabButton = document.querySelectorAll(".tab-button");
-      const bars = document.querySelectorAll(".bar");
       const textContainers = document.querySelectorAll(
         ".strengths-text-container"
       );
@@ -130,25 +94,18 @@ document.addEventListener("DOMContentLoaded", () => {
           const buttonId = button.id;
           console.log(buttonId);
 
-          // Update bars
-          bars.forEach((bar) => {
-            if (bar.classList.contains(buttonId)) {
-              bar.classList.add("orange-underline");
-            } else {
-              bar.classList.remove("orange-underline");
-            }
-          });
-
           // Update button opacity
           tabButton.forEach((btn) => {
             if (btn.id === buttonId) {
               btn.classList.add("opacity-added");
+              btn.classList.add("orange-underline");
             } else {
               btn.classList.remove("opacity-added");
+              btn.classList.remove("orange-underline");
             }
           });
 
-          //sdfgsg
+          //Activate paragraph
           textContainers.forEach((container) => {
             container.classList.remove("show-paragraph");
             if (container.classList.contains(`text-for-${buttonId}`)) {
@@ -157,8 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         });
       });
-
       //-------
+
+      /* SIDEBAR DROPDOWN BOX */
       const arrow = document.querySelector(".pages-arrow");
       const pagesList = document.querySelector(".pages-list");
 
@@ -181,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
           pagesList.classList.remove("show-list");
         }
       }
+      // -------------
     });
 });
 
@@ -194,7 +153,7 @@ $(function () {
     speed: 3000,
     cssEase: "linear",
     pauseOnHover: true,
-    arrows: false,
+    arrows: true,
     dots: false,
     fade: true,
   });
@@ -206,7 +165,7 @@ $(function () {
     autoplay: true,
     autoplaySpeed: 0,
     speed: 5000,
-    cssEase: 'linear',
+    cssEase: "linear",
     dots: false,
     arrows: false,
     pauseOnHover: false,
