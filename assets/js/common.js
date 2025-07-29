@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const sidebar = document.querySelector(".sidebar");
       const header = document.querySelector(".header-container");
       const overlay = document.querySelector(".overlay");
+      const body = document.querySelector('body');
 
       hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("active");
@@ -29,10 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
           sidebar.classList.add("show");
           header.classList.add("header-hidden");
           overlay.classList.add("dimmed");
+          body.classList.add('no-scroll');
         } else {
           sidebar.classList.remove("show");
           header.classList.remove("header-hidden");
           overlay.classList.remove("dimmed");
+          body.classList.remove('no-scroll');
         }
       }
       //----------------
@@ -136,6 +139,29 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
       // -------------
+
+      /* NUMBERS RUN UP AT REFRESH */
+
+      // function countUp() {
+      //   const patients = document.querySelector(".patients-counter");
+      //   let count = 0;
+      //   const target = 2500;
+      //   const increment = 25; 
+      //   const intervalSpeed = 10; 
+
+      //   const interval = setInterval(() => {
+      //     count += increment;
+
+      //     if (count >= target) {
+      //       count = target;
+      //       clearInterval(interval);
+      //     }
+
+      //     patients.textContent = count.toLocaleString(); // e.g., 2,500
+      //   }, intervalSpeed);
+      // }
+
+      // countUp();
     });
 });
 

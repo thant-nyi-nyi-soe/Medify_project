@@ -12,6 +12,9 @@ body {
   padding-top: 90px;
   background-color: rgba(255, 255, 255, 0.2);
 }
+.no-scroll {
+  overflow: hidden;
+}
 .header-container {
   position: fixed;
   top: 0;
@@ -38,7 +41,6 @@ body {
   display: flex;
   gap: 55px;
 }
-
 .header-right > a,
 .pages {
   padding: 37px 0 33px;
@@ -566,7 +568,7 @@ body {
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 0 70px 70px;
 }
