@@ -40,15 +40,11 @@ document.addEventListener("DOMContentLoaded", () => {
       /* MAKING SLIDER BUTTONS WORK */
       const leftSlide = document.querySelector(".slider-left-arrow-button");
 
-      leftSlide.addEventListener("click", () => {
-        
-      });
+      leftSlide.addEventListener("click", () => {});
 
       const rightSlide = document.querySelector(".slider-right-arrow-button");
 
-      rightSlide.addEventListener("click", () => {
-        
-      });
+      rightSlide.addEventListener("click", () => {});
 
       //----------------
 
@@ -150,7 +146,7 @@ $(function () {
     slidesToScroll: 1,
     infinite: true,
     autoplay: true,
-    speed: 3000,
+    speed: 1000,
     cssEase: "linear",
     pauseOnHover: true,
     arrows: true,
@@ -169,6 +165,26 @@ $(function () {
     dots: false,
     arrows: false,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 1160,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 375,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
 
   //Your code here

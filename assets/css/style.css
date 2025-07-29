@@ -343,42 +343,8 @@ body {
   color: #0a3380;
   max-width: 700px;
 }
-/* .slider-left-arrow-button,
-.slider-right-arrow-button {
-  height: 50px;
-  width: 50px;
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  z-index: 1;
-  position: absolute;
-  top: 60%;
-  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.slider-left-arrow-button {
-  left: 5%;
-}
-.slider-right-arrow-button {
-  right: 5%;
-}
-.slider-left-arrow{
-  height: 25px;
-  width: 25px;
-  border-top: solid 4px #54ced4;
-  border-right: solid 4px #54ced4;
-  transform: translateX(5px) rotate(-135deg);
-}
-.slider-right-arrow {
-  height: 25px;
-  width: 25px;
-  border-top: solid 4px #54ced4;
-  border-right: solid 4px #54ced4;
-  transform: translateX(-5px) rotate(45deg);
-} */
-.slick-next,
-.slick-prev {
+
+.slick-arrow {
   height: 50px;
   width: 50px;
   z-index: 1000;
@@ -386,6 +352,9 @@ body {
   top: 60%;
   background-color: #FFFFFF;
   border-radius: 5px;
+}
+.slick-arrow:active {
+  background-color: #ffffff;
 }
 .slick-prev {
   left: 5%;
@@ -440,8 +409,7 @@ body {
   .hamburger-menu {
     display: flex;
   }
-  .slick-prev,
-  .slick-next {
+  .slick-arrow {
     display: none;
   }
 }
@@ -878,7 +846,7 @@ body {
   }
 }
 
-/* === ALLIANCE SLIDER === */
+/* === LOGO SLIDER === */
 .logo-slider {
   width: 100%;
   margin: 102px 0 90px 0;
@@ -895,6 +863,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 
 /* === CALL CENTER === */
 .call-center-background {
