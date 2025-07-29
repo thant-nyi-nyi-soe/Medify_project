@@ -1,37 +1,37 @@
 // Your JavaScript code goes here
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('header.html')
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("header.html")
     .then((res) => res.text())
     .then((html) => {
-      document.querySelector('header').innerHTML = html;
+      document.querySelector("header").innerHTML = html;
 
-      const hamburger = document.querySelector('.hamburger-menu');
-      const sidebar = document.querySelector('.sidebar');
-      const header = document.querySelector('.header-container');
-      const overlay = document.querySelector('.overlay');
+      const hamburger = document.querySelector(".hamburger-menu");
+      const sidebar = document.querySelector(".sidebar");
+      const header = document.querySelector(".header-container");
+      const overlay = document.querySelector(".overlay");
 
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
 
         hamburgerToggle();
       });
 
-      const back = document.querySelector('.close-button');
-      back.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+      const back = document.querySelector(".close-button");
+      back.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
 
         hamburgerToggle();
       });
 
       function hamburgerToggle() {
-        if (hamburger.classList.contains('active')) {
-          sidebar.classList.add('show');
-          header.classList.add('header-hidden');
-          overlay.classList.add('dimmed');
+        if (hamburger.classList.contains("active")) {
+          sidebar.classList.add("show");
+          header.classList.add("header-hidden");
+          overlay.classList.add("dimmed");
         } else {
-          sidebar.classList.remove('show');
-          header.classList.remove('header-hidden');
-          overlay.classList.remove('dimmed');
+          sidebar.classList.remove("show");
+          header.classList.remove("header-hidden");
+          overlay.classList.remove("dimmed");
         }
       }
       //---------------------------------------
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //   localStorage.setItem('contactsPage', pageInfo.contactsPage);
       // });
 
-      const tabs = document.querySelectorAll('.tab');
+      const tabs = document.querySelectorAll(".tab");
 
       // local Storage Done
       const pageInfo = {
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
+        tab.addEventListener("click", () => {
           const pageID = tab.id;
 
           // Reset all pages to false
@@ -103,81 +103,82 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           // Save to localStorage
-          localStorage.setItem('pageInfo', JSON.stringify(pageInfo));
+          localStorage.setItem("pageInfo", JSON.stringify(pageInfo));
         });
       });
 
       // Retrieve saved state from localStorage
-      const stored = JSON.parse(localStorage.getItem('pageInfo'));
+      const stored = JSON.parse(localStorage.getItem("pageInfo"));
 
       // Check which page is true and apply 'underline' class
       if (stored) {
         for (let key in stored) {
           if (stored[key]) {
-            document.getElementById(key)?.classList.add('underlined');
+            document.getElementById(key)?.classList.add("underlined");
           }
         }
       }
 
-      const tabButton = document.querySelectorAll('.tab-button');
-      const bars = document.querySelectorAll('.bar');
-      const textContainers = document.querySelectorAll('.strengths-text-container');
+      const tabButton = document.querySelectorAll(".tab-button");
+      const bars = document.querySelectorAll(".bar");
+      const textContainers = document.querySelectorAll(
+        ".strengths-text-container"
+      );
 
       tabButton.forEach((button) => {
-        button.addEventListener('click', () => {
+        button.addEventListener("click", () => {
           const buttonId = button.id;
           console.log(buttonId);
 
-          
           // Update bars
           bars.forEach((bar) => {
             if (bar.classList.contains(buttonId)) {
-              bar.classList.add('orange-underline');
+              bar.classList.add("orange-underline");
             } else {
-              bar.classList.remove('orange-underline');
+              bar.classList.remove("orange-underline");
             }
           });
 
           // Update button opacity
           tabButton.forEach((btn) => {
             if (btn.id === buttonId) {
-              btn.classList.add('opacity-added');
+              btn.classList.add("opacity-added");
             } else {
-              btn.classList.remove('opacity-added');
+              btn.classList.remove("opacity-added");
             }
           });
 
           //sdfgsg
           textContainers.forEach((container) => {
-            container.classList.remove('show-paragraph');
+            container.classList.remove("show-paragraph");
             if (container.classList.contains(`text-for-${buttonId}`)) {
-              container.classList.add('show-paragraph')
+              container.classList.add("show-paragraph");
             }
-          })
+          });
         });
       });
 
       //-------
-      const arrow = document.querySelector('.pages-arrow');
-      const pagesList = document.querySelector('.pages-list');
+      const arrow = document.querySelector(".pages-arrow");
+      const pagesList = document.querySelector(".pages-list");
 
-      arrow.addEventListener('click', () => {
-        arrow.classList.toggle('arrow-rotate');
+      arrow.addEventListener("click", () => {
+        arrow.classList.toggle("arrow-rotate");
         arrowToggle();
       });
 
-      const sidebarPages = document.querySelector('.sidebar-pages');
+      const sidebarPages = document.querySelector(".sidebar-pages");
 
-      sidebarPages.addEventListener('click', () => {
-        arrow.classList.toggle('arrow-rotate');
+      sidebarPages.addEventListener("click", () => {
+        arrow.classList.toggle("arrow-rotate");
         arrowToggle();
       });
 
       function arrowToggle() {
-        if (arrow.classList.contains('arrow-rotate')) {
-          pagesList.classList.add('show-list');
+        if (arrow.classList.contains("arrow-rotate")) {
+          pagesList.classList.add("show-list");
         } else {
-          pagesList.classList.remove('show-list');
+          pagesList.classList.remove("show-list");
         }
       }
     });
@@ -185,32 +186,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Your jQuery code goes here
 $(function () {
-  $('.welcome-slider').slick({
+  $(".welcome-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
     autoplay: true,
     speed: 3000,
-    cssEase: 'linear',
+    cssEase: "linear",
     pauseOnHover: true,
     arrows: false,
     dots: false,
     fade: true,
   });
 
- $('.alliance-slider').slick({
-  slidesToShow: 4,
-  slidesToScroll: 4,
-  infinite: true,
-  autoplay: true,
-  speed: 3000,
-  dot: false,
-  arrow: false,
-  pauseOnHover: false,
-});
+  $(".alliance-slider").slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    infinite: true,
+    autoplay: true,
+    speed: 3000,
+    dots: false,
+    arrows: false,
+    pauseOnHover: false,
+  });
 
   //Your code here
-  $('button').on('click', () => {
-    console.log('Hello');
+  $("button").on("click", () => {
+    console.log("Hello");
   });
 });
