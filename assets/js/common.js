@@ -199,12 +199,14 @@ $(function () {
     fade: true,
   });
 
-  $(".alliance-slider").slick({
-    slidesToShow: 4,
-    slidesToScroll: 4,
+  $(".logo-slider").slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
     infinite: true,
     autoplay: true,
-    speed: 3000,
+    autoplaySpeed: 0,
+    speed: 5000,
+    cssEase: 'linear',
     dots: false,
     arrows: false,
     pauseOnHover: false,
