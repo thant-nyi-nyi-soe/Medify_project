@@ -159,6 +159,9 @@ document.addEventListener("DOMContentLoaded", () => {
       countUp(awardsCounter, 25, 1, 60);
 
       // --------------------
+
+      const toTop = document.querySelector('.back-to-top-button');
+      
     });
 });
 

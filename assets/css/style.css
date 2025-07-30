@@ -973,7 +973,7 @@ body {
   background-position: center;
 }
 .contacts-text-area {
-  padding: 80px 0 88px;
+  padding: 100px 0 100px;
 }
 .contacts-top-background h2 {
   font-size: 42px;
@@ -1191,4 +1191,17 @@ body {
 }
 .back-to-top-button img {
   height: 18px;
+}
+.footer-wrapper {
+  width: 100%;
+  border-top: solid 1px #e5e5e5;
+  border-bottom: solid 1px #e5e5e5;
+}
+.below-footer {
+  font-family: "Nunito", sans-serif;
+  margin: 0 auto;
+  width: fit-content;
+  color: #aeb6c2;
+  font-weight: 500;
+  padding: 23px 0 15px;
 }
