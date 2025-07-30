@@ -40,15 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       //----------------
 
-      /* MAKING SLIDER BUTTONS WORK */
-      const leftSlide = document.querySelector(".slider-left-arrow-button");
-
-      leftSlide.addEventListener("click", () => {});
-
-      const rightSlide = document.querySelector(".slider-right-arrow-button");
-
-      rightSlide.addEventListener("click", () => {});
-
       //----------------
 
       /* SIDEBAR UNDERLINE ON EVERY PAGE */
@@ -83,18 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       /* MAKING STRENGTHS TABS INTERACTIVE */
-      const tabButton = document.querySelectorAll(".tab-button");
+      const tabButtons = document.querySelectorAll(".tab-button");
       const textContainers = document.querySelectorAll(
         ".strengths-text-container"
       );
 
-      tabButton.forEach((button) => {
+      tabButtons.forEach((button) => {
         button.addEventListener("click", () => {
           const buttonId = button.id;
           console.log(buttonId);
 
-          // Update button opacity
-          tabButton.forEach((btn) => {
+          // Update button opacity and underline
+          tabButtons.forEach((btn) => {
             if (btn.id === buttonId) {
               btn.classList.add("opacity-added");
               btn.classList.add("orange-underline");
@@ -142,20 +133,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
       /* NUMBERS RUN UP AT REFRESH */
 
-      const counter = document.querySelector(".patients-counter");
-      const target = 2500;
-      let current = 0;
-      const increment = 25;
-      const intervalSpeed = 10;
+      function countUp(name, end, increment, interval) {
+        let count = 0;
 
-      const interval = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(interval);
-        }
-        counter.textContent = current.toLocaleString(); // Just one number, formatted
-      }, intervalSpeed);
+        const counter = setInterval(() => {
+          count += increment;
+          if (count >= end) {
+            count = end;
+            clearInterval(counter);
+          } // BREAKING CONDITION
+          name.innerHTML = count;
+        }, interval);
+      }
+
+      const patientsCounter = document.querySelector('.patients-counter');
+      countUp(patientsCounter, 2500, 25, 15);
+
+      const sectionsCounter = document.querySelector('.sections-counter');
+      countUp(sectionsCounter, 15, 1, 100);
+
+      const researchesCounter = document.querySelector('.researches-counter');
+      countUp(researchesCounter, 40, 1, 40);
+
+      const awardsCounter = document.querySelector('.awards-counter');
+      countUp(awardsCounter, 25, 1, 60);
+
+      // --------------------
     });
 });
 

@@ -68,7 +68,7 @@ body {
   left: 50%;
   transform: translate(-50%);
   z-index: 1;
-
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   width: 250px;
   border: none;
   border-radius: 10px;
@@ -84,6 +84,7 @@ body {
   border: none;
   color: #0a3380;
   background-color: white;
+  border-bottom: solid 0.5px #f1efef;
 }
 .pages-dropdown *:hover {
   background-color: #299cff;
@@ -354,6 +355,9 @@ body {
   top: 60%;
   background-color: #FFFFFF;
   border-radius: 5px;
+}
+.slick-arrow:hover {
+  background-color: #ffffff;
 }
 .slick-arrow:active {
   background-color: #ffffff;
@@ -635,7 +639,7 @@ body {
   color: #3b4964;
 }
 .first-paragraph {
-  margin: 20px 0;
+  margin: 10px 0 20px;
 }
 .about-me {
   font-family: "Ubuntu", sans-serif;
@@ -780,25 +784,13 @@ body {
 }
 @keyframes slideUp {
   0% {
-    transform: translateY(50px);
+    transform: translateY(40px);
     opacity: 0;
   }
   100% {
     transform: translateY(0px);
     opacity: 1;
   }
-}
-.opacity-reduced {
-  opacity: 0.4;
-}
-.bars-container {
-  padding-right: 43px;
-  width: 100%;
-  height: 3px;
-  display: flex;
-}
-.bar {
-  flex: 1;
 }
 .opacity-added {
   opacity: 1;
