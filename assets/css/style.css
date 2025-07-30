@@ -12,9 +12,7 @@ body {
   padding-top: 90px;
   background-color: rgba(255, 255, 255, 0.2);
 }
-.no-scroll {
-  overflow: hidden;
-}
+
 .header-container {
   position: fixed;
   top: 0;
@@ -120,13 +118,6 @@ body {
   display: none;
 }
 
-.dimmed {
-  position: fixed;
-  inset: 0; /* covers full viewport */
-  background-color: rgba(0, 0, 0, 0.5); /* 50% black dim */
-  transition: opacity 0.3s ease;
-  z-index: 999;
-}
 @media screen and (max-width: 768px) {
   .header-container {
     background-color: rgba(49, 49, 49, 1);
@@ -226,18 +217,28 @@ body {
 .show-list {
   display: flex;
 }
-
 .line {
   display: block;
 }
 .color-active {
   color: blue;
 }
-.show {
-  transform: translate(473px);
-  transition: transform 0.3s ease;
-}
+
 @media screen and (max-width: 768px) {
+  .show {
+    transform: translate(473px);
+    transition: transform 0.3s ease;
+  }
+  .no-scroll {
+    overflow: hidden;
+  }
+  .dimmed {
+    position: fixed;
+    inset: 0; /* covers full viewport */
+    background-color: rgba(0, 0, 0, 0.5); /* 50% black dim */
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
   .pages-wrapper {
     width: 100%;
     display: flex;
@@ -351,10 +352,10 @@ body {
 .slick-arrow {
   height: 50px;
   width: 50px;
-  z-index: 1000;
+  z-index: 1;
   position: absolute;
   top: 60%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 5px;
 }
 .slick-arrow:hover {
@@ -372,18 +373,17 @@ body {
 }
 .slick-next::before {
   color: transparent;
-  background-image: url('../images/top/right-arrow.png');
+  background-image: url("../images/top/right-arrow.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .slick-prev::before {
   color: transparent;
-  background-image: url('../images/top/right-arrow.png');
+  background-image: url("../images/top/right-arrow.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  
 }
 @media screen and (max-width: 1024px) {
   .first-slide,
@@ -826,7 +826,6 @@ body {
     max-width: unset;
     margin: 0 auto;
   }
-  
 }
 @media screen and (max-width: 768px) {
   .why-choose-text-container {
@@ -858,7 +857,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 
 /* === CALL CENTER === */
 .call-center-background {
@@ -927,10 +925,10 @@ body {
 }
 .our-media-card {
   position: relative;
-  
+
   min-width: 300px;
 }
-.our-media-card img{
+.our-media-card img {
   border-radius: 15px;
 }
 .date-label {
@@ -941,7 +939,7 @@ body {
 }
 .caption-label {
   font-size: 24px;
-  color: #0A3380;
+  color: #0a3380;
   font-weight: 800;
 }
 .tips-button {
@@ -949,7 +947,7 @@ body {
   top: 31px;
   left: 31px;
   color: #2ea6f7;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 10px 11px;
   border-radius: 5px;
   box-shadow: 7px 5px 15px 0px rgba(0, 0, 0, 0.09);
@@ -963,5 +961,209 @@ body {
   .our-media-card {
     min-width: unset;
     max-width: 300px;
+  }
+}
+/* === CONTACTS PAGE === */
+
+/* === TOP SECTION === */
+.contacts-top-background {
+  background-image: url("../images/contact-us/half-doctor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+.contacts-text-area {
+  padding: 80px 0 88px;
+}
+.contacts-top-background h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 0 auto;
+}
+.contacts-top-background p {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 10px auto 0;
+}
+.greaterthansign-for-contacts {
+  color: #54ced4;
+}
+.contacts-top-background p strong {
+  color: #0a3380;
+}
+
+/* === MAIN CONTENT === */
+.contacts-content-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 90px 20px 97px;
+}
+.contacts-quick-support {
+  width: 400px;
+  padding: 34px 0 0 20px;
+}
+.quick-support {
+  color: #ff9e21;
+  font-size: 14px;
+  font-weight: 700;
+}
+.contacts-quick-support h3 {
+  color: #0a3380;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 20px 0 30px;
+}
+.quick-support-paragraph {
+  font-family: "Nunito", sans-serif;
+  color: #3b4964;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+.contacts-button-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.contacts-button-container img {
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+}
+.contacts-button-label {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: #2ea6f7;
+}
+.contacts-button-link {
+  font-family: "Nunito", sans-serif;
+  color: #3b4964;
+  margin-top: 5px;
+}
+.contacts-main-img-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px 100px;
+  border-bottom: solid 1px #e5e5e5;
+}
+.contacts-main-img-container img {
+  margin: 0 auto;
+}
+
+/* === FOOTER === */
+.footer-container {
+  max-width: 1320px;
+  margin: 100px auto 70px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* === FOOTER OUR CONTACTS === */
+.footer-our-contacts {
+  padding: 10px;
+  min-width: 265px;
+}
+.footer-our-contacts h3 {
+  font-size: 20px;
+  color: #0a3380;
+  font-weight: bold;
+}
+.footer-contactinfo {
+  display: flex;
+  margin-top: 20px;
+}
+.footer-contactinfo img {
+  height: 23px;
+  width: 23px;
+  margin-right: 20px;
+}
+.footer-contactinfo p {
+  font-family: "Nunito", sans-serif;
+  color: #3b4964;
+  line-height: 1.2;
+}
+
+/* === FOOTER OPEN HOURS === */
+.footer-open-hours {
+  min-width: 304px;
+  padding: 10px;
+}
+.footer-open-hours h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a3380;
+}
+.footer-day-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+.grey-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+.footer-day-label {
+  font-family: "Nunito", sans-serif;
+  color: #3b4964;
+}
+.footer-open-time {
+  font-family: "Nunito", sans-serif;
+  color: #54ced4;
+}
+.footer-map {
+  border-radius: 15px;
+  height: 264px;
+  min-width: 376px;
+  flex: 1;
+}
+@media screen and (max-width: 1246px) {
+  .footer-map {
+    max-width: 264px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-our-contacts {
+    flex: 1;
+  }
+  .footer-open-hours {
+    flex: 1;
+  }
+  .footer-map {
+    max-width: unset;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    margin: 0 55px;
+  }
+  .footer-our-contacts,
+  .footer-open-hours,
+  .footer-map {
+    min-width: unset;
+    padding: 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .footer-container {
+    margin: 0 20px;
+  }
+  .footer-map {
   }
 }
