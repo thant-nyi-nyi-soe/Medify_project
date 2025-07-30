@@ -1004,7 +1004,7 @@ body {
   display: flex;
 }
 .contacts-quick-support {
-  width: 400px;
+  max-width: 420px;
   padding: 34px 0 0 20px;
 }
 .quick-support {
@@ -1054,10 +1054,14 @@ body {
 }
 .contacts-main-img-container img {
   margin: 0 auto;
+  border-radius: 15px;
 }
 @media screen and (max-width: 1024px) {
   .contacts-content-container {
     flex-direction: column;
+  }
+  .contacts-quick-support {
+    max-width: 100%;
   }
 }
 
