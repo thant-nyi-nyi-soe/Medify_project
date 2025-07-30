@@ -1001,6 +1001,7 @@ body {
   max-width: 1320px;
   margin: 0 auto;
   padding: 90px 20px 97px;
+  display: flex;
 }
 .contacts-quick-support {
   width: 400px;
@@ -1053,6 +1054,11 @@ body {
 }
 .contacts-main-img-container img {
   margin: 0 auto;
+}
+@media screen and (max-width: 1024px) {
+  .contacts-content-container {
+    flex-direction: column;
+  }
 }
 
 /* === FOOTER === */
