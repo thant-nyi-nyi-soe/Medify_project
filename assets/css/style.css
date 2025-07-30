@@ -69,7 +69,7 @@ body {
   transform: translate(-50%);
   z-index: 1;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  width: 275px;
   border: none;
   border-radius: 10px;
   font-size: 15px;
@@ -79,6 +79,7 @@ body {
 }
 
 .pages-dropdown * {
+  font-weight: 500;
   padding: 20px;
   width: 100%;
   border: none;
@@ -529,16 +530,16 @@ body {
   font-size: 20px;
 }
 .options-button {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0a3380;
+  text-align: center;
   background-color: white;
   border-radius: 10px;
-  font-size: 30px;
-  text-align: center;
-
   margin: -35px auto 0;
-  max-width: 250px;
-  padding: 20px 0;
+  width: fit-content;
+  padding: 18px 33px;
   box-shadow: 8px 9px 35px rgba(49, 49, 49, 0.08);
-  color: #0a3380;
   transition: transform 0.3s ease;
   position: relative;
   z-index: 1;
