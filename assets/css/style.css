@@ -1176,3 +1176,19 @@ body {
   .footer-map {
   }
 }
+.back-to-top-button {
+  height: 40px;
+  width: 40px;
+  background-color: #ff9e21;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.back-to-top-button img {
+  height: 18px;
+}
