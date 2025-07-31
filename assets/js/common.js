@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const buttonId = button.id;
           console.log(buttonId);
 
-          // Update button opacity and underline
+          // UPDATE BUTTON OPACITY AND UNDERLINE
           tabButtons.forEach((btn) => {
             if (btn.id === buttonId) {
               btn.classList.add("opacity-added");
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
 
-          //Activate paragraph
+          // START PARAGRAPH ACTION
           textContainers.forEach((container) => {
             container.classList.remove("show-paragraph");
             if (container.classList.contains(`text-for-${buttonId}`)) {
@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       // -------------
 
-      /* NUMBERS RUN UP AT REFRESH */
-
+      
+      /* NUMBERS RUN UP WHEN THE PAGE IS REFRESHED*/
       function countUp(name, end, increment, interval) {
         let count = 0;
 
@@ -160,12 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // --------------------
 
-      const toTop = document.querySelector(".back-to-top-button");
-
-      scrollFunction();
-      window.addEventListener("scroll", scrollFunction);
-
-      function scrollFunction() {
+      
+      /* MAKE BACK TO TOP BUTTON DISAPPEAR AT THE TOP OF THE PAGE */
+      window.addEventListener("scroll", () => {
+        const toTop = document.querySelector(".back-to-top-button");
         if (
           document.body.scrollTop > 200 ||
           document.documentElement.scrollTop > 200
@@ -174,17 +172,15 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           toTop.classList.add("no-back-to-top");
         }
-      }
+      });
 
+      /* MAKE BACK TO TOP BUTTON STICK TO THE TOP OF THE FOOTER */
       window.addEventListener("scroll", () => {
         const footer = document.getElementById("footerPart");
-        const footerRect = footer.getBoundingClientRect();
+        const footerTop = footer.getBoundingClientRect().top;
         const winHeight = window.innerHeight;
 
-        console.log(footerRect.top);
-        console.log(winHeight);
-
-        if (footerRect.top < winHeight) {
+        if (footerTop < winHeight) {
           toTop.classList.add("above-footer");
         } else {
           toTop.classList.remove("above-footer");
