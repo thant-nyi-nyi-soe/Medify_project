@@ -146,22 +146,50 @@ document.addEventListener("DOMContentLoaded", () => {
         }, interval);
       }
 
-      const patientsCounter = document.querySelector('.patients-counter');
+      const patientsCounter = document.querySelector(".patients-counter");
       countUp(patientsCounter, 2500, 25, 15);
 
-      const sectionsCounter = document.querySelector('.sections-counter');
+      const sectionsCounter = document.querySelector(".sections-counter");
       countUp(sectionsCounter, 15, 1, 100);
 
-      const researchesCounter = document.querySelector('.researches-counter');
+      const researchesCounter = document.querySelector(".researches-counter");
       countUp(researchesCounter, 40, 1, 40);
 
-      const awardsCounter = document.querySelector('.awards-counter');
+      const awardsCounter = document.querySelector(".awards-counter");
       countUp(awardsCounter, 25, 1, 60);
 
       // --------------------
 
-      const toTop = document.querySelector('.back-to-top-button');
-      
+      const toTop = document.querySelector(".back-to-top-button");
+
+      scrollFunction();
+      window.addEventListener("scroll", scrollFunction);
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 200 ||
+          document.documentElement.scrollTop > 200
+        ) {
+          toTop.classList.remove("no-back-to-top");
+        } else {
+          toTop.classList.add("no-back-to-top");
+        }
+      }
+
+      window.addEventListener("scroll", () => {
+        const footer = document.getElementById("footerPart");
+        const footerRect = footer.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+
+        console.log(footerRect.top);
+        console.log(winHeight);
+
+        if (footerRect.top < winHeight) {
+          toTop.classList.add("above-footer");
+        } else {
+          toTop.classList.remove("above-footer");
+        }
+      });
     });
 });
 

@@ -1189,6 +1189,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+.no-back-to-top {
+  display: none;
+}
+.above-footer {
+  position: absolute;
+  top: -15%;
+  right: 2%;
+}
 .back-to-top-button img {
   height: 18px;
 }
@@ -1196,6 +1204,7 @@ body {
   width: 100%;
   border-top: solid 1px #e5e5e5;
   border-bottom: solid 1px #e5e5e5;
+  position: relative;
 }
 .below-footer {
   font-family: "Nunito", sans-serif;
