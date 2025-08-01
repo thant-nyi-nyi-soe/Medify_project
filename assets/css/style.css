@@ -1134,6 +1134,7 @@ body {
   border-radius: 15px;
   height: 264px;
   min-width: 376px;
+  max-width: 550px;
   flex: 1;
 }
 @media screen and (max-width: 1246px) {
@@ -1211,6 +1212,406 @@ body {
   margin: 0 auto;
   width: fit-content;
   color: #aeb6c2;
-  font-weight: 500;
+  font-weight: bold;
   padding: 23px 0 15px;
+}
+
+/* === BLOG TOP SECTION === */
+.blog-top-background {
+  background-image: url("../images/blog2column/blog-2column-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.blog-text-area {
+  padding: 80px 0 88px;
+}
+.blog-top-background h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 0 auto;
+}
+.blog-top-background p {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 10px auto 0;
+}
+.greaterthansign-for-blog {
+  color: #54ced4;
+}
+.blog-top-background p strong {
+  color: #0a3380;
+}
+
+/* === BLOG MAIN CONTENT === */
+.blog-main-content-container {
+  padding: 20px;
+  max-width: 1280px;
+  margin: 30px auto 0;
+  display: flex;
+}
+
+/* === TREATMENT CARDS === */
+.treatment-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 20px 32px;
+}
+.treatment-card {
+  position: relative;
+}
+
+.treatment-card img,
+.treatment-card-slide {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.treatment-card-slider {
+  height: max-content;
+}
+.card-slide-1 {
+  background-image: url("../images/blog2column/Physician-2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+}
+.card-slide-2 {
+  background-image: url("../images/blog2column/Physician-3.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+}
+.card-slide-3 {
+  background-image: url("../images/blog2column/Physician-1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+}
+.treatment-date-label {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: #aeb6c2;
+  margin: 35px 0 7px 0;
+}
+.treatment-caption-label {
+  font-size: 24px;
+  color: #0a3380;
+  font-weight: 800;
+}
+.treatment-tips-button {
+  position: absolute;
+  top: 31px;
+  left: 31px;
+  color: #2ea6f7;
+  background-color: #ffffff;
+  padding: 10px 11px;
+  border-radius: 5px;
+  box-shadow: 7px 5px 15px 0px rgba(0, 0, 0, 0.09);
+  z-index: 1;
+}
+
+/* === BLOG RIGHT SICKY CONTENT === */
+
+.blog-side-content-container {
+  width: 275px;
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  margin-right: 32px;
+}
+
+
+/* === SIDE PROFILE === */
+.side-profile {
+  padding: 30px 0;
+}
+.side-profile-pic {
+  width: 210px;
+  margin: 0 auto;
+}
+.side-profile h3 {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 26px;
+  color: #0a3380;
+}
+.side-profile p {
+  text-align: center;
+  margin: 20px 0 24px;
+  font-family: "Nunito", sans-serif;
+  color: #3b4964;
+}
+.social-media-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.social-media-button {
+  position: relative;
+}
+.social-media-button img {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  transition: opacity 0.6s ease, transform 0.8s ease;
+}
+.social-media-button-hovered {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.social-media-button:hover .social-media-button-normal {
+  opacity: 0;
+}
+.social-media-button:hover .social-media-button-hovered {
+  transform: translateY(-5px);
+  opacity: 1;
+}
+
+/* === SIDE CATEGOIESY === */
+.side-categories h3 {
+  width: fit-content;
+  margin: 10px auto 40px;
+  font-size: 18px;
+  font-weight: 700px;
+  color: #0a3380;
+}
+.side-categories h3::after {
+  content: "";
+  display: block;
+  margin: 15px auto 0;
+  width: 22px;
+  height: 3px;
+  background-color: #ff9e21;
+}
+.side-categories p {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 22px;
+  font-size: 18px;
+  font-weight: 500px;
+  color: #0a3380;
+  cursor: pointer;
+}
+.side-categories p:hover {
+  color: #2ea6f7;
+}
+.side-categories p::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #aeb6c2;
+}
+.categories-grey-line {
+  display: flex;
+  flex-grow: 1;
+  height: 1px;
+  background-color: #e5e5e5;
+}
+.category-pages {
+  font-family: "Nunito", sans-serif;
+  color: #aeb6c2;
+  font-size: 14px;
+}
+
+/* === SIDE GALLERY === */
+.side-gallery h3 {
+  width: fit-content;
+  margin: 52px auto 25px;
+  font-size: 18px;
+  font-weight: 700px;
+  color: #0a3380;
+}
+.side-gallery h3::after {
+  content: "";
+  display: block;
+  margin: 15px auto 0;
+  width: 22px;
+  height: 3px;
+  background-color: #ff9e21;
+}
+.side-gallery-img-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.side-gallery-img-container img {
+  border-radius: 10px;
+  max-width: 77px;
+  margin: 0 auto;
+}
+
+/* === SIDE GALLERY === */
+.side-emergency-section {
+  background-image: url("../images/common/widget-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 53px 0;
+  border-radius: 15px;
+  margin-top: 80px;
+}
+.side-emergency-section h3 {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 22px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+}
+.side-emergency-section p {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 20px 0 32px;
+  text-align: center;
+}
+.side-emergency-section a {
+  color: #2ea6f7;
+  font-weight: bold;
+  background-color: white;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .treatment-cards-container {
+    max-width: 100%;
+  }
+  .blog-main-content-container {
+    flex-direction: column;
+    max-width: 857px;
+  }
+  .blog-side-content-container {
+    width: unset;
+    margin: 0;
+  }
+  .side-gallery-img-container img {
+    max-width: 100%;
+  }
+  .treatment-cards-container {
+    padding: 20px 0;
+  }
+  .blog-side-content-container {
+    padding: 50px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+ 
+  .treatment-cards-container {
+    padding: 20px 0;
+  }
+  .side-gallery-img-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .treatment-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* === ABOUT US PAGE TOP SECTION === */
+.aboutus-top-background {
+  background-image: url("../images/aboutus/aboutus-logo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.aboutus-text-area {
+  padding: 80px 0 88px;
+}
+.aboutus-top-background h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 0 auto;
+}
+.aboutus-top-background p {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 10px auto 0;
+}
+.greaterthansign-for-aboutus {
+  color: #54ced4;
+}
+.aboutus-top-background p strong {
+  color: #0a3380;
+}
+
+/* === ADVANCED-SERVICES === */
+.aboutus-advanced-services-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 102px 20px;
+}
+.aboutus-advanced-services {
+  font-size: 14px;
+  color: #ff9e21;
+  font-weight: 800;
+  width: fit-content;
+  margin: 0 auto;
+}
+.aboutus-advanced-services-container h3 {
+  font-size: 42px;
+  color: #0a3380;
+  width: fit-content;
+  font-weight: bold;
+  margin: 20px auto 22px;
+}
+.aboutus-advanced-services-paragraph {
+  color: #3b4964;
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 2;
+}
+.aboutus-care-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.aboutus-care-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 36px;
+  max-width: 339px;
+}
+.aboutus-care-card img {
+  max-width: 55px;
+  margin: 20px auto 0;
+}
+.aboutus-card-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 24px;
+  color: #0a3380;
+  font-weight: bold;
+}
+.aboutus-card-paragraph {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  color: #3b4964;
+  line-height: 1.5;
 }

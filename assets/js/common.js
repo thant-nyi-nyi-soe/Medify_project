@@ -131,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       // -------------
 
-      
       /* NUMBERS RUN UP WHEN THE PAGE IS REFRESHED*/
       function countUp(name, end, increment, interval) {
         let count = 0;
@@ -160,7 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // --------------------
 
-      
       /* MAKE BACK TO TOP BUTTON DISAPPEAR AT THE TOP OF THE PAGE */
       window.addEventListener("scroll", () => {
         const toTop = document.querySelector(".back-to-top-button");
@@ -176,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       /* MAKE BACK TO TOP BUTTON STICK TO THE TOP OF THE FOOTER */
       window.addEventListener("scroll", () => {
+        const toTop = document.querySelector(".back-to-top-button");
         const footer = document.getElementById("footerPart");
         const footerTop = footer.getBoundingClientRect().top;
         const winHeight = window.innerHeight;
@@ -235,6 +234,19 @@ $(function () {
         },
       },
     ],
+  });
+
+  $(".treatmen-card-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    speed: 1000,
+    cssEase: "linear",
+    pauseOnHover: true,
+    arrows: true,
+    dots: false,
+    fade: true,
   });
 
   //Your code here
