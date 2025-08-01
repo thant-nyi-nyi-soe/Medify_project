@@ -1265,9 +1265,8 @@ body {
 .treatment-card {
   position: relative;
 }
-
 .treatment-card img,
-.treatment-card-slide {
+.treatment-card-slider img {
   border-radius: 15px;
   width: 100%;
   max-width: 100%;
@@ -1276,7 +1275,6 @@ body {
 .treatment-card-slider {
   width: 100%;
 }
-
 .treatment-date-label {
   font-family: "Nunito", sans-serif;
   font-size: 14px;
