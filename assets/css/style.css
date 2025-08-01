@@ -1274,26 +1274,9 @@ body {
   object-fit: contain;
 }
 .treatment-card-slider {
-  height: max-content;
+  width: 100%;
 }
-.card-slide-1 {
-  background-image: url("../images/blog2column/Physician-2.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100px;
-}
-.card-slide-2 {
-  background-image: url("../images/blog2column/Physician-3.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100px;
-}
-.card-slide-3 {
-  background-image: url("../images/blog2column/Physician-1.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100px;
-}
+
 .treatment-date-label {
   font-family: "Nunito", sans-serif;
   font-size: 14px;
@@ -1771,7 +1754,6 @@ body {
   }
 }
 
-
 /* === ABOUTUS QUALITY STUFF === */
 .aboutus-quality-stuff-container {
   padding: 79px 20px 75px;
@@ -1885,6 +1867,6 @@ body {
   .aboutus-profile-container {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 50px
+    gap: 50px;
   }
 }
