@@ -1180,7 +1180,6 @@ body {
   .footer-open-hours,
   .footer-map {
     min-width: unset;
-    padding: 0;
     width: 100%;
   }
 }
@@ -1608,7 +1607,7 @@ body {
 .aboutus-advanced-services-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 102px 20px;
+  padding: 98px 20px 90px;
 }
 .aboutus-advanced-services {
   font-size: 14px;
@@ -1640,7 +1639,7 @@ body {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 36px;
-  max-width: 394px;
+  flex: 1 1 394px;
   box-shadow: 10px 8px 35px rgba(49, 49, 49, 0.08);
 }
 .aboutus-care-card img {
@@ -1667,13 +1666,21 @@ body {
     flex-wrap: wrap;
   }
   .aboutus-care-card {
-    max-width: 339px;
+    flex: 1 1 339px;
+    max-width: 394px;
   }
 }
 @media screen and (max-width: 768px) {
+  .aboutus-care-cards-container {
+    padding: 20px 60px;
+  }
   .aboutus-care-card {
-    min-width: unset;
-    max-width: 627px;
+    max-width: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .aboutus-care-cards-container {
+    padding: 20px;
   }
 }
 
@@ -1729,7 +1736,7 @@ body {
 .aboutus-our-features-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 102px 20px;
+  padding: 102px 20px 50px;
 }
 .aboutus-our-features {
   font-size: 14px;
@@ -1765,7 +1772,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 90px 0;
+  padding-top: 90px;
 }
 .aboutus-features-left h4,
 .aboutus-features-left p {
@@ -1789,6 +1796,7 @@ body {
 }
 .aboutus-feature-box img {
   height: 40px;
+  width: 40px;
 }
 @media screen and (max-width: 1200px) {
   .aboutus-features-container img {
@@ -1800,7 +1808,12 @@ body {
     flex-direction: column;
     max-width: 900px;
     margin: 0 auto;
+    gap: 60px;
     align-items: center;
+  }
+  .aboutus-features-left,
+  .aboutus-features-right {
+    padding-top: 0;
   }
   .aboutus-features-left .aboutus-feature-box {
     justify-content: end;
@@ -1812,13 +1825,14 @@ body {
   }
 }
 @media screen and (max-width: 538px) {
-  .aboutus-features-container img {
-    max-width: 420px;
+  .man-inthe-circle {
+    max-width: 400px;
+    padding: 0 40px;
   }
 }
 @media screen and (max-width: 446px) {
   .aboutus-features-container img {
-    max-width: 362px;
+    max-width: 340px;
   }
 }
 
@@ -1832,17 +1846,20 @@ body {
   color: #ff9e21;
   font-size: 14px;
   font-weight: 700;
+  margin-left: 20px;
 }
 .aboutus-quality-stuff-container h3 {
   font-size: 42px;
   color: #0a3380;
   font-weight: 700;
-  margin: 20px 0 40px;
+  margin: 20px 20px 40px;
 }
 .aboutus-profile-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  padding: 30px 0 0;
+  justify-items: center;
 }
 .aboutus-profile-card {
   position: relative;
@@ -1867,21 +1884,22 @@ body {
 .plus-button img {
   height: 20px;
 }
-.plus-button:hover {
+
+.plus-to-x {
   background-color: #54ced4;
   transform: rotate(45deg);
 }
-.plus-button:hover img {
+.plus-to-x img {
   filter: brightness(10000);
 }
 .plus-button:hover + .plus-dropdown,
 .plus-dropdown:hover {
   opacity: 1;
 }
-
 .plus-dropdown {
   position: absolute;
-  top: 70px;
+  top: 0px;
+  padding-top: 70px;
   right: 18px;
   opacity: 0;
   display: flex;
@@ -1921,20 +1939,212 @@ body {
   .aboutus-profile-container {
     grid-template-columns: repeat(3, 1fr);
   }
+  .aboutus-profile-card {
+    max-width: 300px;
+  }
 }
 @media screen and (max-width: 1000px) {
+  .aboutus-quality-stuff-container {
+    max-width: 788px;
+  }
   .aboutus-profile-container {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+    margin: 0 auto;
   }
   .aboutus-profile-card {
     max-width: 350px;
   }
 }
 @media screen and (max-width: 768px) {
+  .aboutus-quality-stuff-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 393px;
+  }
   .aboutus-profile-container {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 50px;
+    gap: 60px;
+  }
+  .aboutus-quality-stuff-container h3 {
+    font-size: 30px;
+  }
+}
+
+/* === OUR HISTORY PAGE TOP SECTION === */
+.ourhistory-top-background {
+  background-image: url("../images/contact-us/half-doctor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 138px;
+}
+.ourhistory-text-area {
+  padding: 100px 0 100px;
+}
+.ourhistory-top-background h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 0 auto;
+}
+.ourhistory-top-background p {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 10px auto 0;
+}
+.ourhistory-top-background a {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+}
+.greaterthansign-for-ourhistory {
+  color: #54ced4;
+}
+.ourhistory-top-background p strong {
+  color: #0a3380;
+}
+
+/* ===  OUR MISSION === */
+.our-mission-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.ourhistory-text-container {
+  padding: 20px 0;
+  max-width: 575px;
+}
+.ourhistory {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  color: #ff9e21 !important;
+}
+.ourhistory-text-container h2 {
+  color: #0a3380;
+  font-size: 42px;
+  font-weight: bold;
+  max-width: 450px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+.ourhistory-text-container li {
+  font-family: "Noto Sans", sans-serif;
+  line-height: 2.2;
+  font-weight: 300;
+}
+.ourhistory-text-container li::before {
+  content: "";
+  display: inline-block;
+  background: url("../images/our-history/check.png") no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* ===  HISTORY === */
+.history-wrapper {
+  background-color: #54ced4;
+  background-image: url("../images/our-history/our-history-bg.png");
+  background-position: center center;
+  background-repeat: repeat;
+  height: 100%;
+}
+.history-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.history-container > h4 {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  max-width: 185px;
+  margin: 0 auto;
+}
+.history-container > h3 {
+  padding: 20px 0 22px;
+  font-size: 42px;
+  color: #ffffff;
+  max-width: 441px;
+  margin: 0 auto;
+  text-align: center;
+}
+.history-container > p {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+}
+.history-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.history-card-container > p {
+  font-family: "Ubuntu", Sans-serif;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 48px;
+  margin-right: 30px;
+}
+.history-vertical-line {
+  display: block;
+  background-color: #ffffff;
+  align-self: stretch;
+  min-width: 5px;
+  position: relative;
+}
+.history-card-container img {
+  min-width: 30px ;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.history-card {
+  padding: 24px 30px 24px 50px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+.history-card h4 {
+  color: #0a3380;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  font-family: "Ubuntu";
+  text-align: center;
+}
+.history-card h4:hover {
+  color: #ff9e21;
+  transition: 0.4s;
+}
+.history-card p {
+  font-family: "Nunito", sans-serif;
+  color: #3b4964;
+}
+.last-line {
+  background-color: transparent;
+}
+@media screen and (max-width: 768px) {
+  .history-container {
+    max-width: 600px;
+  }
+  .history-card-container>p {
+    font-size: 30px;
   }
 }
