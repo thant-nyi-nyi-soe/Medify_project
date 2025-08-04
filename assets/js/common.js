@@ -1,41 +1,41 @@
 // Your JavaScript code goes here
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('header.html')
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("header.html")
     .then((res) => res.text())
     .then((html) => {
-      document.querySelector('header').innerHTML = html;
+      document.querySelector("header").innerHTML = html;
 
       /* MAKING HAMBURGER BUTTON ACTIVE */
-      const hamburger = document.querySelector('.hamburger-menu');
-      const sidebar = document.querySelector('.sidebar');
-      const header = document.querySelector('.header-container');
-      const overlay = document.querySelector('.overlay');
-      const body = document.querySelector('body');
+      const hamburger = document.querySelector(".hamburger-menu");
+      const sidebar = document.querySelector(".sidebar");
+      const header = document.querySelector(".header-container");
+      const overlay = document.querySelector(".overlay");
+      const body = document.querySelector("body");
 
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
 
         hamburgerToggle();
       });
 
-      const back = document.querySelector('.close-button');
-      back.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+      const back = document.querySelector(".close-button");
+      back.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
 
         hamburgerToggle();
       });
 
       function hamburgerToggle() {
-        if (hamburger.classList.contains('active')) {
-          sidebar.classList.add('show');
-          header.classList.add('header-hidden');
-          overlay.classList.add('dimmed');
-          body.classList.add('no-scroll');
+        if (hamburger.classList.contains("active")) {
+          sidebar.classList.add("show");
+          header.classList.add("header-hidden");
+          overlay.classList.add("dimmed");
+          body.classList.add("no-scroll");
         } else {
-          sidebar.classList.remove('show');
-          header.classList.remove('header-hidden');
-          overlay.classList.remove('dimmed');
-          body.classList.remove('no-scroll');
+          sidebar.classList.remove("show");
+          header.classList.remove("header-hidden");
+          overlay.classList.remove("dimmed");
+          body.classList.remove("no-scroll");
         }
       }
       //----------------
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //----------------
 
       /* SIDEBAR UNDERLINE ON EVERY PAGE */
-      const tabs = document.querySelectorAll('.tab');
+      const tabs = document.querySelectorAll(".tab");
 
       const pageInfo = {
         home: false,
@@ -52,81 +52,83 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
+        tab.addEventListener("click", () => {
           const pageID = tab.id;
 
           for (let key in pageInfo) {
             pageInfo[key] = key === pageID;
           }
 
-          localStorage.setItem('pageInfo', JSON.stringify(pageInfo));
+          localStorage.setItem("pageInfo", JSON.stringify(pageInfo));
         });
       });
 
-      const stored = JSON.parse(localStorage.getItem('pageInfo'));
+      const stored = JSON.parse(localStorage.getItem("pageInfo"));
 
       if (stored) {
         for (let key in stored) {
           if (stored[key]) {
-            document.getElementById(key)?.classList.add('underlined');
+            document.getElementById(key)?.classList.add("underlined");
           }
         }
       }
 
       /* MAKING STRENGTHS TABS INTERACTIVE */
-      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabButtons = document.querySelectorAll(".tab-button");
       const textContainers = document.querySelectorAll(
-        '.strengths-text-container'
+        ".strengths-text-container"
       );
-
+      
       tabButtons.forEach((button) => {
-        button.addEventListener('click', () => {
+        button.addEventListener("click", () => {
           const buttonId = button.id;
           console.log(buttonId);
 
           // UPDATE BUTTON OPACITY AND UNDERLINE
           tabButtons.forEach((btn) => {
             if (btn.id === buttonId) {
-              btn.classList.add('opacity-added');
-              btn.classList.add('orange-underline');
+              btn.classList.add("opacity-added");
+              btn.classList.add("orange-underline");
             } else {
-              btn.classList.remove('opacity-added');
-              btn.classList.remove('orange-underline');
+              btn.classList.remove("opacity-added");
+              btn.classList.remove("orange-underline");
             }
           });
 
           // START PARAGRAPH ACTION
           textContainers.forEach((container) => {
-            container.classList.remove('show-paragraph');
+            container.classList.remove("show-paragraph");
             if (container.classList.contains(`text-for-${buttonId}`)) {
-              container.classList.add('show-paragraph');
+              container.classList.add("show-paragraph");
             }
           });
+
+         
         });
       });
       //-------
 
       /* SIDEBAR DROPDOWN BOX */
-      const arrow = document.querySelector('.pages-arrow');
-      const pagesList = document.querySelector('.pages-list');
+      const arrow = document.querySelector(".pages-arrow");
+      const pagesList = document.querySelector(".pages-list");
 
-      arrow.addEventListener('click', () => {
-        arrow.classList.toggle('arrow-rotate');
+      arrow.addEventListener("click", () => {
+        arrow.classList.toggle("arrow-rotate");
         arrowToggle();
       });
 
-      const sidebarPages = document.querySelector('.sidebar-pages');
+      const sidebarPages = document.querySelector(".sidebar-pages");
 
-      sidebarPages.addEventListener('click', () => {
-        arrow.classList.toggle('arrow-rotate');
+      sidebarPages.addEventListener("click", () => {
+        arrow.classList.toggle("arrow-rotate");
         arrowToggle();
       });
 
       function arrowToggle() {
-        if (arrow.classList.contains('arrow-rotate')) {
-          pagesList.classList.add('show-list');
+        if (arrow.classList.contains("arrow-rotate")) {
+          pagesList.classList.add("show-list");
         } else {
-          pagesList.classList.remove('show-list');
+          pagesList.classList.remove("show-list");
         }
       }
       // -------------
@@ -145,91 +147,90 @@ document.addEventListener('DOMContentLoaded', () => {
         }, interval);
       }
 
-      const patientsCounter = document.querySelector('.patients-counter');
+      const patientsCounter = document.querySelector(".patients-counter");
       countUp(patientsCounter, 2500, 25, 15);
 
-      const sectionsCounter = document.querySelector('.sections-counter');
+      const sectionsCounter = document.querySelector(".sections-counter");
       countUp(sectionsCounter, 15, 1, 100);
 
-      const researchesCounter = document.querySelector('.researches-counter');
+      const researchesCounter = document.querySelector(".researches-counter");
       countUp(researchesCounter, 40, 1, 40);
 
-      const awardsCounter = document.querySelector('.awards-counter');
+      const awardsCounter = document.querySelector(".awards-counter");
       countUp(awardsCounter, 25, 1, 60);
 
       // --------------------
 
       /* MAKE BACK TO TOP BUTTON DISAPPEAR AT THE TOP OF THE PAGE */
-      window.addEventListener('scroll', () => {
-        const toTop = document.querySelector('.back-to-top-button');
+      window.addEventListener("scroll", () => {
+        const toTop = document.querySelector(".back-to-top-button");
         if (
           document.body.scrollTop > 200 ||
           document.documentElement.scrollTop > 200
         ) {
-          toTop.classList.remove('no-back-to-top');
+          toTop.classList.remove("no-back-to-top");
         } else {
-          toTop.classList.add('no-back-to-top');
+          toTop.classList.add("no-back-to-top");
         }
       });
 
       /* MAKE BACK TO TOP BUTTON STICK TO THE TOP OF THE FOOTER */
-      window.addEventListener('scroll', () => {
-        const toTop = document.querySelector('.back-to-top-button');
-        const footer = document.getElementById('footerPart');
+      window.addEventListener("scroll", () => {
+        const toTop = document.querySelector(".back-to-top-button");
+        const footer = document.getElementById("footerPart");
         const footerTop = footer.getBoundingClientRect().top;
         const winHeight = window.innerHeight;
 
         if (footerTop < winHeight) {
-          toTop.classList.add('above-footer');
+          toTop.classList.add("above-footer");
         } else {
-          toTop.classList.remove('above-footer');
+          toTop.classList.remove("above-footer");
         }
       });
 
       /* MAKE PROFILE PLUS BUTTON INTERACTIVE */
-      const plusBtn = document.querySelectorAll('.plus-button');
-      const plusDd = document.querySelectorAll('.plus-dropdown')
+      const plusBtn = document.querySelectorAll(".plus-button");
+      const plusDd = document.querySelectorAll(".plus-dropdown");
 
-      plusBtn.addEventListener('mouseenter', () => {
-        plusBtn.classList.add('plus-to-x');
+      plusBtn.addEventListener("mouseenter", () => {
+        plusBtn.classList.add("plus-to-x");
       });
-      plusBtn.addEventListener('mouseleave', () => {
-        plusBtn.classList.remove('plus-to-x');
+      plusBtn.addEventListener("mouseleave", () => {
+        plusBtn.classList.remove("plus-to-x");
       });
 
-      plusDd.addEventListener('mouseenter', () => {
-        plusBtn.classList.add('plus-to-x');
+      plusDd.addEventListener("mouseenter", () => {
+        plusBtn.classList.add("plus-to-x");
       });
-      plusDd.addEventListener('mouseleave', () => {
-        plusBtn.classList.remove('plus-to-x');
+      plusDd.addEventListener("mouseleave", () => {
+        plusBtn.classList.remove("plus-to-x");
       });
-     
     });
 });
 
 // Your jQuery code goes here
 $(function () {
-  $('.welcome-slider').slick({
+  $(".welcome-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
     autoplay: true,
     speed: 1000,
-    cssEase: 'linear',
+    cssEase: "linear",
     pauseOnHover: true,
     arrows: true,
     dots: false,
     fade: true,
   });
 
-  $('.logo-slider').slick({
+  $(".logo-slider").slick({
     slidesToShow: 6,
     slidesToScroll: 1,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 0,
     speed: 5000,
-    cssEase: 'linear',
+    cssEase: "linear",
     dots: false,
     arrows: false,
     pauseOnHover: false,
@@ -255,13 +256,13 @@ $(function () {
     ],
   });
 
-  $('.treatment-card-slider').slick({
+  $(".treatment-card-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
     autoplay: true,
     speed: 1000,
-    cssEase: 'linear',
+    cssEase: "linear",
     pauseOnHover: true,
     arrows: true,
     dots: false,
@@ -269,7 +270,7 @@ $(function () {
   });
 
   //Your code here
-  $('button').on('click', () => {
-    console.log('Hello');
+  $("button").on("click", () => {
+    console.log("Hello");
   });
 });

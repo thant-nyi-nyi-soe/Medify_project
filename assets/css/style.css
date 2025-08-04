@@ -865,6 +865,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 768px) {
+  .logo-slider {
+    margin: 70px 0;
+  }
+}
 
 /* === CALL CENTER === */
 .call-center-background {
@@ -1974,7 +1979,7 @@ body {
 
 /* === OUR HISTORY PAGE TOP SECTION === */
 .ourhistory-top-background {
-  background-image: url("../images/contact-us/half-doctor.jpg");
+  background-image: url("../images/our-history/half-doctor.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -2009,6 +2014,11 @@ body {
 .ourhistory-top-background p strong {
   color: #0a3380;
 }
+@media screen and (max-width: 768px) {
+  .ourhistory-top-background {
+    margin-bottom: 77px;
+  }
+}
 
 /* ===  OUR MISSION === */
 .our-mission-container {
@@ -2017,6 +2027,10 @@ body {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.our-mission-container > img {
+  height: 100%;
+  width: 100%;
 }
 .ourhistory-text-container {
   padding: 20px 0;
@@ -2027,7 +2041,7 @@ body {
   font-size: 14px;
   color: #ff9e21 !important;
 }
-.ourhistory-text-container h2 {
+.ourhistory-text-container h3 {
   color: #0a3380;
   font-size: 42px;
   font-weight: bold;
@@ -2037,7 +2051,7 @@ body {
 }
 .ourhistory-text-container li {
   font-family: "Noto Sans", sans-serif;
-  line-height: 2.2;
+  line-height: 2.5;
   font-weight: 300;
 }
 .ourhistory-text-container li::before {
@@ -2048,6 +2062,16 @@ body {
   width: 20px;
   height: 20px;
   margin-right: 10px;
+}
+@media screen and (max-width: 1024px) {
+  .our-mission-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .our-mission-container h3 {
+    font-size: 30px;
+  }
 }
 
 /* ===  HISTORY === */
@@ -2061,7 +2085,7 @@ body {
 .history-container {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 100px 20px;
+  padding: 102px 20px 72px;
 }
 
 .history-container > h4 {
@@ -2107,7 +2131,7 @@ body {
   position: relative;
 }
 .history-card-container img {
-  min-width: 30px ;
+  min-width: 30px;
   height: 30px;
   position: absolute;
   top: 0;
@@ -2143,8 +2167,91 @@ body {
 @media screen and (max-width: 768px) {
   .history-container {
     max-width: 600px;
+    padding: 56px 20px 26px;
   }
-  .history-card-container>p {
+  .history-container h3 {
     font-size: 30px;
+  }
+  .history-card-container > p {
+    font-size: 35px;
+  }
+  .history-card {
+    padding: 24px 15px 24px 25px;
+  }
+}
+@media screen and (max-width: 525px) {
+  .history-card-container > p {
+    font-size: 30px;
+  }
+  .history-card {
+    padding: 24px 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .history-card-container > p {
+    font-size: 22px;
+    margin-right: 20px;
+  }
+}
+
+/* ===  AMENITIES === */
+.amenities-container {
+  max-width: 1320px;
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.amenities-img-container {
+  position: relative;
+}
+.amenities-2 {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+}
+.amenities-text-container {
+  padding: 20px;
+  margin-top: 75px;
+}
+.amenities-text-container h3 {
+  color: #0a3380;
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+.amenities-text-container p {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  color: #3b4964;
+}
+.first-paragraph {
+  margin: 10px 0 20px;
+}
+.amenities-text-container h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  color: #ff9e21;
+}
+.amenities-paragraph-container {
+  display: none;
+}
+@media screen and (max-width: 1024px) {
+  .amenities-container {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    margin: unset;
+  }
+}
+@media screen and (max-width: 768px) {
+  .amenities-container {
+    max-width: 600px;
+    margin: 50px auto;
+  }
+}
+@media screen and (max-width: 454px) {
+  .amenities-text-container h3 {
+    font-size: 28px;
   }
 }
