@@ -1277,10 +1277,11 @@ body {
 
 /* === TREATMENT CARDS === */
 .treatment-cards-container {
+  flex: 15;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  padding: 20px 21px 20px 32px;
+  padding: 20px 21px;
 }
 .treatment-card {
   position: relative;
@@ -1356,12 +1357,11 @@ body {
 /* === BLOG RIGHT SICKY CONTENT === */
 
 .blog-side-content-container {
-  width: 275px;
+  flex: 5;
   position: sticky;
   top: 0;
   height: fit-content;
-  margin-right: 32px;
-  padding: 30px 10px 30px 21px;
+  padding: 30px 21px;
   border-left: solid 1px #e5e5e5;
 }
 
@@ -1413,7 +1413,7 @@ body {
   opacity: 1;
 }
 
-/* === SIDE CATEGOIESY === */
+/* === SIDE CATEGORIES === */
 .side-categories h3 {
   width: fit-content;
   margin: 10px auto 40px;
@@ -1484,7 +1484,6 @@ body {
 }
 .side-gallery-img-container img {
   border-radius: 10px;
-  max-width: 77px;
   margin: 0 auto;
 }
 
@@ -1493,7 +1492,7 @@ body {
   background-image: url("../images/common/widget-banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 53px 0;
+  padding: 57px 0;
   border-radius: 15px;
   margin-top: 80px;
 }
@@ -1546,7 +1545,10 @@ body {
   .blog-side-content-container {
     padding: 50px;
   }
-  
+  .side-emergency-section {
+    max-width: 402px;
+    margin: 80px auto 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -1563,7 +1565,14 @@ body {
     grid-template-columns: 1fr;
   }
 }
-
+@media screen and (max-width: 448px) {
+  .side-gallery-img-container {
+    gap: 20px;
+  }
+  .blog-side-content-container {
+    padding: 20px;
+  }
+}
 /* === ABOUT US PAGE TOP SECTION === */
 .aboutus-top-background {
   background-image: url("../images/aboutus/aboutus-logo.jpg");
