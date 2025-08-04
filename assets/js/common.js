@@ -236,7 +236,7 @@ $(function () {
     ],
   });
 
-  $(".treatmen-card-slider").slick({
+  $(".treatment-card-slider").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,

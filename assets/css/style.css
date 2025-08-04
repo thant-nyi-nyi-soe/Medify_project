@@ -18,8 +18,9 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
   background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 .header {
   max-width: 1320px;
@@ -349,7 +350,7 @@ body {
   max-width: 700px;
 }
 
-.slick-arrow {
+.welcome-slider .slick-arrow {
   height: 50px;
   width: 50px;
   z-index: 1;
@@ -358,27 +359,30 @@ body {
   background-color: #ffffff;
   border-radius: 5px;
 }
-.slick-arrow:hover {
+.welcome-slider .slick-arrow:hover {
   background-color: #ffffff;
 }
-.slick-arrow:active {
+.welcome-slider .slick-arrow:active {
   background-color: #ffffff;
 }
-.slick-prev {
+.welcome-slider .slick-prev {
   left: 5%;
-  transform: rotate(180deg) translateY(25px);
 }
-.slick-next {
+.welcome-slider .slick-next {
   right: 5%;
 }
-.slick-next::before {
+.welcome-slider .slick-next::before {
   color: transparent;
   background-image: url("../images/top/right-arrow.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
-.slick-prev::before {
+.welcome-slider .slick-prev::before {
+  display: block;
+  transform: rotate(180deg);
+}
+.welcome-slider .slick-prev::before {
   color: transparent;
   background-image: url("../images/top/right-arrow.png");
   background-size: contain;
@@ -826,6 +830,9 @@ body {
     max-width: unset;
     margin: 0 auto;
   }
+  .why-choose-text-container p {
+    max-width: 100%;
+  }
 }
 @media screen and (max-width: 768px) {
   .why-choose-text-container {
@@ -837,6 +844,7 @@ body {
   }
   .strengths-tabs {
     flex-direction: column;
+    padding: 5px 20px;
   }
 }
 
@@ -988,6 +996,12 @@ body {
   color: #0a3380;
   width: fit-content;
   margin: 10px auto 0;
+}
+.contacts-top-background a {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
 }
 .greaterthansign-for-contacts {
   color: #54ced4;
@@ -1240,6 +1254,12 @@ body {
   width: fit-content;
   margin: 10px auto 0;
 }
+.blog-top-background a {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+}
 .greaterthansign-for-blog {
   color: #54ced4;
 }
@@ -1260,7 +1280,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  padding: 20px 32px;
+  padding: 20px 21px 20px 32px;
 }
 .treatment-card {
   position: relative;
@@ -1274,6 +1294,41 @@ body {
 }
 .treatment-card-slider {
   width: 100%;
+  position: relative;
+}
+.treatment-card-slider .slick-track {
+  display: flex !important;
+  width: 100% !important;
+}
+
+.treatment-card-slider .slick-arrow {
+  width: 50px;
+  height: 50px;
+  background-color: #54ced4;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+}
+.treatment-card-slider .slick-prev {
+  left: 27px;
+}
+.treatment-card-slider .slick-next {
+  right: 27px;
+}
+.treatment-card-slider .slick-arrow::before {
+  color: transparent;
+  background-image: url("../images/blog2column/next-arrow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.treatment-card-slider .slick-prev::before {
+  display: block;
+  transform: rotate(180deg);
+}
+.treatment-card-slider .slick-arrow:hover {
+  background-color: #2ea6f7;
 }
 .treatment-date-label {
   font-family: "Nunito", sans-serif;
@@ -1306,6 +1361,8 @@ body {
   top: 0;
   height: fit-content;
   margin-right: 32px;
+  padding: 30px 10px 30px 21px;
+  border-left: solid 1px #e5e5e5;
 }
 
 /* === SIDE PROFILE === */
@@ -1477,6 +1534,9 @@ body {
     width: unset;
     margin: 0;
   }
+  .side-gallery-img-container {
+    gap: 104px;
+  }
   .side-gallery-img-container img {
     max-width: 100%;
   }
@@ -1486,6 +1546,7 @@ body {
   .blog-side-content-container {
     padding: 50px;
   }
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -1494,7 +1555,7 @@ body {
   }
   .side-gallery-img-container {
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    gap: 46px;
   }
 }
 @media screen and (max-width: 700px) {
