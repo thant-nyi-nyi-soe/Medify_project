@@ -1087,9 +1087,9 @@ body {
 /* === FOOTER === */
 .footer-container {
   max-width: 1320px;
-  margin: 100px auto 70px;
+  margin: 70px auto 70px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
   padding: 0 20px;
 }
@@ -1097,7 +1097,6 @@ body {
 /* === FOOTER OUR CONTACTS === */
 .footer-our-contacts {
   padding: 10px;
-  min-width: 265px;
 }
 .footer-our-contacts h3 {
   font-size: 20px;
@@ -1121,7 +1120,7 @@ body {
 
 /* === FOOTER OPEN HOURS === */
 .footer-open-hours {
-  min-width: 304px;
+  width: 304px;
   padding: 10px;
 }
 .footer-open-hours h3 {
@@ -1152,11 +1151,13 @@ body {
 .footer-map {
   border-radius: 15px;
   height: 264px;
-  min-width: 376px;
-  max-width: 550px;
+  width: 300px;
   flex: 1;
 }
 @media screen and (max-width: 1246px) {
+  .footer-container {
+    justify-content: space-between;
+  }
   .footer-map {
     max-width: 264px;
   }
@@ -1164,13 +1165,13 @@ body {
 @media screen and (max-width: 1024px) {
   .footer-container {
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
   .footer-our-contacts {
-    flex: 1;
+    max-width: 265px;
   }
   .footer-open-hours {
-    flex: 1;
+    width: 425px;
   }
   .footer-map {
     max-width: unset;
@@ -1179,7 +1180,6 @@ body {
 @media screen and (max-width: 768px) {
   .footer-container {
     flex-direction: column;
-    margin: 0 55px;
   }
   .footer-our-contacts,
   .footer-open-hours,
@@ -1240,6 +1240,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  margin-bottom: 40px;
 }
 .blog-text-area {
   padding: 80px 0 88px;
@@ -1273,9 +1274,9 @@ body {
 
 /* === BLOG MAIN CONTENT === */
 .blog-main-content-container {
-  padding: 20px;
+  padding: 20px 20px 80px;
   max-width: 1280px;
-  margin: 30px auto 0;
+  margin: 0 auto;
   display: flex;
 }
 
