@@ -902,6 +902,30 @@ body {
   width: fit-content;
   margin: 0 auto;
 }
+@media screen and (max-width: 1024px) {
+  .call-center-container h3 {
+    font-size: 40px;
+  }
+  .call-center-container p {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .call-center-container h3 {
+    font-size: 35px;
+  }
+  .call-center-container p {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .call-center-container h3 {
+    font-size: 30px;
+  }
+  .call-center-container p {
+    font-size: 20px;
+  }
+}
 
 /* === OUR MEDIA === */
 .our-media-container {
@@ -1095,7 +1119,7 @@ body {
 /* === FOOTER === */
 .footer-container {
   max-width: 1320px;
-  margin: 70px 0;
+  margin: 70px auto;
   display: flex;
   justify-content: space-around;
   gap: 20px;
@@ -1128,7 +1152,8 @@ body {
 
 /* === FOOTER OPEN HOURS === */
 .footer-open-hours {
-  width: 304px;
+  max-width: 304px;
+  width: 100%;
   padding: 10px;
 }
 .footer-open-hours h3 {
@@ -1158,7 +1183,8 @@ body {
 }
 .footer-map {
   border-radius: 15px;
-  width: 566px;
+  max-width: 566px;
+  width: 100%;
   height: 267px;
 }
 @media screen and (max-width: 1246px) {
@@ -1166,19 +1192,19 @@ body {
     justify-content: space-between;
   }
   .footer-map {
-    width: 300px;
+    max-width: 300px;
   }
 }
 @media screen and (max-width: 1024px) {
   .footer-container {
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   .footer-open-hours {
-    width: 425px;
+    max-width: 425px;
   }
   .footer-map {
-    width: 800px;
+    max-width: 800px;
   }
 }
 @media screen and (max-width: 960px) {
@@ -1192,10 +1218,10 @@ body {
     margin: 50px 90px;
   }
   .footer-open-hours {
-    width: 100%;
+    max-width: 100%;
   }
   .footer-map {
-    width: 100%;
+    max-width: 100%;
   }
 }
 @media screen and (max-width: 500px) {
@@ -2265,5 +2291,395 @@ body {
 @media screen and (max-width: 454px) {
   .amenities-text-container h3 {
     font-size: 28px;
+  }
+}
+
+/* ===  SERVICES TOP SECTION === */
+.services-top-background {
+  background-image: url("../images/our-history/half-doctor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+.services-text-area {
+  padding: 100px 0 100px;
+}
+.services-top-background h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 0 auto;
+}
+.services-top-background p {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 10px auto 0;
+}
+.services-top-background a {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+}
+.greaterthansign-for-services {
+  color: #54ced4;
+}
+.services-top-background p strong {
+  color: #0a3380;
+}
+
+/* ===  SERVICES CARDS SECTION === */
+.specialization-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 60px 20px 102px;
+}
+.specialization {
+  font-size: 14px;
+  color: #ff9e21;
+  font-weight: 800;
+  width: fit-content;
+  margin: 0 auto;
+}
+.specialization-container h3 {
+  font-size: 42px;
+  color: #0a3380;
+  width: fit-content;
+  font-weight: bold;
+  margin: 20px auto 22px;
+}
+.specialization-paragraph {
+  color: #3b4964;
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 2;
+}
+.service-info-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  row-gap: 20px;
+}
+.service-info-icon-group::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #54ced4;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 1;
+}
+.service-info-icon-group {
+  padding: 30px;
+  border: dashed 1px #54ced4;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+.service-info-icon-group::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #54ced4;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+}
+.service-info-icon-group img {
+  width: 50px;
+  height: 50px;
+}
+.service-info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 270px;
+  width: 100%;
+  height: 270px;
+  border-radius: 15px;
+}
+.service-info-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.5s ease;
+  border-radius: 15px;
+}
+.service-info-card > p {
+  margin: 15px 0 10px;
+  color: #0a3380;
+  margin: 15px 0px 10px 0px;
+  font-size: 24px;
+  font-family: Ubuntu;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 1024px) {
+  .service-info-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .specialization-container {
+    padding: 40px 20px 50px;
+  }
+  .specialization-container h3 {
+    font-size: 30px;
+  }
+  .service-info-cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .service-info-card {
+    max-width: 300px;
+    height: 300px;
+  }
+}
+
+/* ===  PRICING PLAN SECTION === */
+.plan-container-wrapper {
+  background-color: #f9f9f9;
+}
+.plan-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 60px 20px 102px;
+}
+.pricing-plan {
+  font-size: 14px;
+  color: #ff9e21;
+  font-weight: 800;
+  width: fit-content;
+  margin: 0 auto;
+}
+.plan-container h3 {
+  font-size: 42px;
+  color: #0a3380;
+  width: fit-content;
+  font-weight: bold;
+  margin: 20px auto 22px;
+  text-align: center;
+}
+.plan-paragraph {
+  color: #3b4964;
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 2;
+}
+
+.plan-cards-container {
+  padding: 65px 15px 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* first card */
+.standard-plan-card {
+  max-width: 370px;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 43px 35px 0;
+  border-radius: 15px;
+}
+.standard-plan-card h4 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #0a3380;
+}
+.standard-price-tag {
+  font-size: 80px;
+  color: #2ea6f7;
+  font-weight: bold;
+  margin: 28px 0 37px;
+  text-align: center;
+}
+.standard-price-tag sup {
+  font-size: 25px;
+  color: #2ea6f7;
+  font-weight: bold;
+  vertical-align: text-top;
+}
+.standard-price-tag span {
+  font-size: 18px;
+  color: #2ea6f7;
+}
+.standard-plan-line {
+  width: 60px;
+  height: 3px;
+  background-color: #2ea6f7;
+  margin: 0 auto;
+}
+.standard-plan-text {
+  margin: 34px 35px 18px;
+}
+.standard-plan-text > p {
+  color: #0a3380;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.standard-buy-plan {
+  padding: 17px 30px;
+  background-color: #2ea6f7;
+  color: white;
+  width: fit-content;
+  border-radius: 7px 7px 0 0;
+  margin: 62px auto 0;
+}
+.standard-buy-plan:hover {
+  background-color: #ff9e21;
+}
+
+/* second card */
+
+.professional-plan-card {
+  max-width: 370px;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 43px 35px 0;
+  border-radius: 15px;
+  background-image: url("../images/service/price_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.professional-plan-card h4 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+.professional-price-tag {
+  font-size: 80px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 28px 0 37px;
+  text-align: center;
+}
+.professional-price-tag sup {
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: bold;
+  vertical-align: text-top;
+}
+.professional-price-tag span {
+  font-size: 18px;
+  color: #ffffff;
+}
+.professional-plan-line {
+  width: 60px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+.professional-plan-text {
+  margin: 34px 35px 18px;
+}
+.professional-plan-text > p {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.professional-buy-plan {
+  padding: 17px 30px;
+  background-color: #ffffff;
+  color: #2ea6f7;
+  width: fit-content;
+  border-radius: 7px 7px 0 0;
+  margin: 62px auto 0;
+}
+.professional-buy-plan:hover {
+  background-color: #ff9e21;
+}
+
+/* third card */
+.prestige-plan-card {
+  max-width: 370px;
+  width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 43px 35px 0;
+  border-radius: 15px;
+}
+.prestige-plan-card h4 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #54ced4;
+}
+.prestige-price-tag {
+  font-size: 80px;
+  color: #54ced4;
+  font-weight: bold;
+  margin: 28px 0 37px;
+  text-align: center;
+}
+.prestige-price-tag sup {
+  font-size: 25px;
+  color: #54ced4;
+  font-weight: bold;
+  vertical-align: text-top;
+}
+.prestige-price-tag span {
+  font-size: 18px;
+  color: #54ced4;
+}
+.prestige-plan-line {
+  width: 60px;
+  height: 3px;
+  background-color: #54ced4;
+  margin: 0 auto;
+}
+.prestige-plan-text {
+  margin: 34px 35px 18px;
+}
+.prestige-plan-text > p {
+  color: #0a3380;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.prestige-buy-plan {
+  padding: 17px 30px;
+  background-color: #54ced4;
+  color: white;
+  width: fit-content;
+  border-radius: 7px 7px 0 0;
+  margin: 62px auto 0;
+}
+.prestige-buy-plan:hover {
+  background-color: #ff9e21;
+}
+@media screen and (max-width: 1024px) {
+  .plan-cards-container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .plan-container {
+    padding: 80px 20px 35px;
+  }
+  .plan-container h3 {
+    font-size: 30px;
   }
 }
