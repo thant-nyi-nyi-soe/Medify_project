@@ -734,6 +734,7 @@ body {
 @media screen and (max-width: 1000px) {
   .info-cards-container {
     flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2278,7 +2279,7 @@ body {
 @media screen and (max-width: 1024px) {
   .amenities-container {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+    padding: 100px 20px;
     margin: unset;
   }
 }
@@ -2682,4 +2683,43 @@ body {
   .plan-container h3 {
     font-size: 30px;
   }
+}
+
+
+/* ===  DOCTOR TOP SECTION === */
+.doctor-top-background {
+  background-image: url("../images/our-history/half-doctor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 40px;
+}
+.doctor-text-area {
+  padding: 100px 0 100px;
+}
+.doctor-top-background h2 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 0 auto;
+}
+.doctor-top-background p {
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+  width: fit-content;
+  margin: 10px auto 0;
+}
+.doctor-top-background a {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+}
+.greaterthansign-for-doctor {
+  color: #54ced4;
+}
+.doctor-top-background p strong {
+  color: #0a3380;
 }
