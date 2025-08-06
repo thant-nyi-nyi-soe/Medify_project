@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const textContainers = document.querySelectorAll(
         ".strengths-text-container"
       );
-      
+
       tabButtons.forEach((button) => {
         button.addEventListener("click", () => {
           const buttonId = button.id;
@@ -102,8 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
               container.classList.add("show-paragraph");
             }
           });
-
-         
         });
       });
       //-------
@@ -134,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // -------------
 
       /* NUMBERS RUN UP WHEN THE PAGE IS REFRESHED*/
-      function countUp(name, end, increment, interval) {
+      function countUp(element, end, increment, interval) {
         let count = 0;
 
         const counter = setInterval(() => {
@@ -142,22 +140,30 @@ document.addEventListener("DOMContentLoaded", () => {
           if (count >= end) {
             count = end;
             clearInterval(counter);
-          } // BREAKING CONDITION
-          name.innerHTML = count;
+          }
+          element.innerHTML = count;
         }, interval);
       }
 
       const patientsCounter = document.querySelector(".patients-counter");
-      countUp(patientsCounter, 2500, 25, 15);
+      if (patientsCounter) {
+        countUp(patientsCounter, 2500, 25, 15);
+      };
 
       const sectionsCounter = document.querySelector(".sections-counter");
-      countUp(sectionsCounter, 15, 1, 100);
+      if (sectionsCounter) {
+        countUp(sectionsCounter, 15, 1, 100);
+      };
 
       const researchesCounter = document.querySelector(".researches-counter");
-      countUp(researchesCounter, 40, 1, 40);
+      if (researchesCounter) {
+        countUp(researchesCounter, 40, 1, 40);
+      };
 
       const awardsCounter = document.querySelector(".awards-counter");
-      countUp(awardsCounter, 25, 1, 60);
+      if (awardsCounter) {
+        countUp(awardsCounter, 25, 1, 60);
+      };
 
       // --------------------
 
@@ -189,22 +195,30 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       /* MAKE PROFILE PLUS BUTTON INTERACTIVE */
-      const plusBtn = document.querySelectorAll(".plus-button");
-      const plusDd = document.querySelectorAll(".plus-dropdown");
+      const plusBtns = document.querySelectorAll(".plus-button");
+      const plusDds = document.querySelectorAll(".plus-dropdown");
 
-      plusBtn.addEventListener("mouseenter", () => {
-        plusBtn.classList.add("plus-to-x");
-      });
-      plusBtn.addEventListener("mouseleave", () => {
-        plusBtn.classList.remove("plus-to-x");
+      plusBtns.forEach((plusBtn, index) => {
+        plusBtn.addEventListener("mouseenter", () => {
+          plusBtn.classList.add("plus-to-x");
+        });
+        plusBtn.addEventListener("mouseleave", () => {
+          plusBtn.classList.remove("plus-to-x");
+        });
+
+        const plusDd = plusDds[index]; /* NEW */
+
+        if (plusDd) {
+          plusDd.addEventListener("mouseenter", () => {
+            plusBtn.classList.add("plus-to-x");
+          });
+          plusDd.addEventListener("mouseleave", () => {
+            plusBtn.classList.remove("plus-to-x");
+          });
+        }
       });
 
-      plusDd.addEventListener("mouseenter", () => {
-        plusBtn.classList.add("plus-to-x");
-      });
-      plusDd.addEventListener("mouseleave", () => {
-        plusBtn.classList.remove("plus-to-x");
-      });
+      
     });
 });
 
