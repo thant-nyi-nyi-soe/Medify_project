@@ -573,7 +573,6 @@ body {
 .stats-cards-container {
   max-width: 1320px;
   margin: 0 auto;
-  margin-top: -1px;
 
   display: flex;
   flex-direction: row;
@@ -588,7 +587,6 @@ body {
   width: 40px;
   height: 40px;
   margin: 0 auto;
-  filter: sepia(1) saturate(10000%) hue-rotate(-56deg);
 }
 .middle-part {
   display: flex;
@@ -852,7 +850,7 @@ body {
 /* === LOGO SLIDER === */
 .logo-slider {
   width: 100%;
-  margin: 102px 0 90px 0;
+  padding: 102px 0 90px 0;
 }
 .logo-div {
   max-width: 200px;
@@ -868,7 +866,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .logo-slider {
-    margin: 70px 0;
+    padding: 70px 0;
   }
 }
 
@@ -1085,6 +1083,9 @@ body {
   font-size: 14px;
   font-weight: 900;
   color: #2ea6f7;
+}
+.contacts-button-label:hover {
+  color: #000;
 }
 .contacts-button-link {
   font-family: "Nunito", sans-serif;
@@ -1385,6 +1386,9 @@ body {
   color: #0a3380;
   font-weight: 800;
 }
+.treatment-caption-label:hover {
+  color: #54ced4;
+}
 .treatment-tips-button {
   position: absolute;
   top: 31px;
@@ -1423,10 +1427,17 @@ body {
   color: #0a3380;
 }
 .side-profile p {
-  text-align: center;
-  margin: 20px 0 24px;
   font-family: "Nunito", sans-serif;
   color: #3b4964;
+  font-size: 16px;
+  line-height: 30px;
+  padding-bottom: 24px;
+  padding-top: 20px;
+  max-width: 269px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 500;
 }
 .social-media-buttons-container {
   display: flex;
@@ -1562,6 +1573,10 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   margin: 0 auto;
+}
+.side-emergency-section a:hover {
+  background-color: #2ea6f7;
+  color: #fff;
 }
 
 @media screen and (max-width: 1100px) {
@@ -3037,26 +3052,31 @@ body {
 .questions-container {
   max-width: 1320px;
   margin: 0 auto;
-  display: flex;
   padding: 20px;
-  gap: 100px;
 }
-
-.questions-left-container {
-  flex: 1;
-}
-.questions-left-container h4 {
+.questions-container h4 {
   color: #ff9e21;
   font-size: 14px;
   font-weight: 700;
-  margin-left: 20px;
+  margin: 0px 0px 10px 24px;
 }
+.question-contents-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 10px 20px;
+}
+.questions-left-container {
+  max-width: 537px;
+  flex: 1;
+}
+
 .questions-left-container h3 {
   color: #0a3380;
   font-size: 42px;
   font-weight: bold;
   line-height: 1.5;
-  margin: 10px 0 20px;
+  margin-bottom: 20px;
 }
 .questions-left-container p {
   color: #3b4964;
@@ -3067,6 +3087,8 @@ body {
 }
 .questions-right-container {
   flex: 1;
+
+  height: auto;
 }
 .question-line {
   display: flex;
@@ -3111,7 +3133,7 @@ body {
   position: absolute;
 }
 .minus {
-  background-color:#2ea6f7;
+  background-color: #2ea6f7;
 }
 .minus::before {
   background-color: #ffffff;
@@ -3122,14 +3144,111 @@ body {
 }
 .answer {
   font-family: "Nunito", sans-serif;
-  font-size: 0px;
   color: #3b4964;
-  transform: translateY(-30px);
-  transition: transform 0.9s ease; 
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 .show-answer {
-  font-size: 16px;
-  transform: translateY(0px);
-  transition: transform 3s ease; 
+  max-height: 150px;
+  opacity: 1;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
 }
 
+/* ===  FAQ LOGO SLIDER === */
+.faq-stats-background {
+  background-color: #54ced4;
+}
+.faq-stats-background .stats-cards-container {
+  padding: 70px;
+}
+.faq-stats-background .middle-part {
+  color: #ffffff;
+}
+
+/* === FAQ SUPPORT CENTER SECTION === */
+.support-container-wrapper {
+  background: #f9f9f9;
+}
+.support-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 98px 20px 90px;
+}
+.support-center {
+  font-size: 14px;
+  color: #ff9e21;
+  font-weight: 800;
+  width: fit-content;
+  margin: 0 auto;
+}
+.support-container h3 {
+  font-size: 42px;
+  color: #0a3380;
+  width: fit-content;
+  font-weight: bold;
+  margin: 20px auto 22px;
+}
+.support-paragraph {
+  color: #3b4964;
+  font-family: "Nunito", sans-serif;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  line-height: 2;
+}
+.support-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.support-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 36px;
+  flex: 1 1 394px;
+  box-shadow: 10px 8px 35px rgba(49, 49, 49, 0.08);
+}
+.support-card img {
+  max-width: 55px;
+  margin: 20px auto 0;
+}
+.support-card-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 24px;
+  color: #0a3380;
+  font-weight: bold;
+}
+.support-paragraph {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  color: #3b4964;
+  line-height: 1.5;
+  font-weight: bold;
+}
+@media screen and (max-width: 1024px) {
+  .support-cards-container {
+    flex-wrap: wrap;
+  }
+  .support-card {
+    flex: 1 1 339px;
+    max-width: 394px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .support-cards-container {
+    padding: 20px 60px;
+  }
+  .support-card {
+    max-width: unset;
+  }
+}
+@media screen and (max-width: 480px) {
+  .support-cards-container {
+    padding: 20px;
+  }
+}

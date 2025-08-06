@@ -221,22 +221,27 @@ document.addEventListener("DOMContentLoaded", () => {
       /* MAKE FAQ PAGE QUESTION BUTTON INTERACTIVE */
       const qLines = document.querySelectorAll(".question-line");
       const answers = document.querySelectorAll(".answer");
-      const qPlus = document.querySelector(".question-plus");
+      const qPluses = document.querySelectorAll(".question-plus");
 
       qLines.forEach((line, index) => {
         line.addEventListener("click", () => {
-          qPlus.classList.toggle("minus");
-          
           const answer = answers[index];
-          if (answer.innerHTML) {
-            answer.classList.toggle("show-answer")
-          } // else {
-          //   answer.innerHTML = `<p class="answer">
-          //     The specific features of work of the general practitioner (family
-          //     doctor) are more reasonable and beneficial to both GPs and
-          //     patients in many respects.
-          //   </p>`;
-          // }
+          const qPlus = qPluses[index];
+          const isAlreadyOpen = line.classList.contains("question-clicked");
+
+          // Close all questions first
+          qLines.forEach((ln, i) => {
+            ln.classList.remove("question-clicked");
+            answers[i].classList.remove("show-answer");
+            qPluses[i].classList.remove("minus");
+          });
+
+          // Toggle current question only if it was previously closed
+          if (!isAlreadyOpen) {
+            line.classList.add("question-clicked");
+            answer.classList.add("show-answer");
+            qPlus.classList.add("minus");
+          }
         });
       });
     });
