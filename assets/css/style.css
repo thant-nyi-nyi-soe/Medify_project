@@ -1640,6 +1640,12 @@ body {
   width: fit-content;
   margin: 10px auto 0;
 }
+.aboutus-top-background a {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  color: #0a3380;
+}
 .greaterthansign-for-aboutus {
   color: #54ced4;
 }
@@ -3059,20 +3065,27 @@ body {
   margin-bottom: 25px;
   line-height: 2;
 }
-
 .questions-right-container {
   flex: 1;
 }
 .question-line {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 23px;
+  transition: 0.5s ease;
+  z-index: 1;
+  background-color: #ffffff;
 }
-.question-line p {
+.question {
   font-size: 20px;
   font-weight: 700;
   color: #0a3380;
 }
-.question-line a::before {
+.question:hover {
+  color: #2ba4f9;
+}
+.question-plus::before {
   content: "";
   display: block;
   width: 20px;
@@ -3080,7 +3093,7 @@ body {
   background-color: #2ea6f7;
   position: absolute;
 }
-.question-line a {
+.question-plus {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -3089,7 +3102,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.question-line a::after {
+.question-plus::after {
   content: "";
   display: block;
   width: 3px;
@@ -3097,11 +3110,26 @@ body {
   background-color: #2ea6f7;
   position: absolute;
 }
-.answer-line {
-  font-family: "Nunito", sans-serif;
-  padding-top: 23px;
-  line-height: 1.8;
-  font-size: 16px;
-  color: #3b4964;
-  display: none;
+.minus {
+  background-color:#2ea6f7;
 }
+.minus::before {
+  background-color: #ffffff;
+}
+.minus::after {
+  transform: rotate(90deg);
+  background-color: #ffffff;
+}
+.answer {
+  font-family: "Nunito", sans-serif;
+  font-size: 0px;
+  color: #3b4964;
+  transform: translateY(-30px);
+  transition: transform 0.9s ease; 
+}
+.show-answer {
+  font-size: 16px;
+  transform: translateY(0px);
+  transition: transform 3s ease; 
+}
+

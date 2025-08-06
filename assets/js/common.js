@@ -148,22 +148,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const patientsCounter = document.querySelector(".patients-counter");
       if (patientsCounter) {
         countUp(patientsCounter, 2500, 25, 15);
-      };
+      }
 
       const sectionsCounter = document.querySelector(".sections-counter");
       if (sectionsCounter) {
         countUp(sectionsCounter, 15, 1, 100);
-      };
+      }
 
       const researchesCounter = document.querySelector(".researches-counter");
       if (researchesCounter) {
         countUp(researchesCounter, 40, 1, 40);
-      };
+      }
 
       const awardsCounter = document.querySelector(".awards-counter");
       if (awardsCounter) {
         countUp(awardsCounter, 25, 1, 60);
-      };
+      }
 
       // --------------------
 
@@ -218,7 +218,27 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      
+      /* MAKE FAQ PAGE QUESTION BUTTON INTERACTIVE */
+      const qLines = document.querySelectorAll(".question-line");
+      const answers = document.querySelectorAll(".answer");
+      const qPlus = document.querySelector(".question-plus");
+
+      qLines.forEach((line, index) => {
+        line.addEventListener("click", () => {
+          qPlus.classList.toggle("minus");
+          
+          const answer = answers[index];
+          if (answer.innerHTML) {
+            answer.classList.toggle("show-answer")
+          } // else {
+          //   answer.innerHTML = `<p class="answer">
+          //     The specific features of work of the general practitioner (family
+          //     doctor) are more reasonable and beneficial to both GPs and
+          //     patients in many respects.
+          //   </p>`;
+          // }
+        });
+      });
     });
 });
 
