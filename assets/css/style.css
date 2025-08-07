@@ -3277,6 +3277,8 @@ body {
     padding: 20px;
   }
 }
-
-
-/* THIS IS THE TEXT TO TEST GIT PULL*/
+@media screen and (max-width: 100px) {
+  .support-cards-container {
+    padding: 100px;
+  }
+}
