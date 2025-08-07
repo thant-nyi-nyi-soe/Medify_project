@@ -244,6 +244,18 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       });
+
+
+      /* HISTORY BUTTON ACTIVATE HISCARD CARD TITLE */
+      const hvl = document.querySelector(".history-vertical-line");
+      const hc = document.querySelector(".history-card");
+
+      hvl.addEventListener("mouseenter", () => {
+        hc.classList.add("marked-for-orange");
+      });
+       hvl.addEventListener("mouseleave", () => {
+        hc.classList.remove("marked-for-orange");
+      });
     });
 });
 

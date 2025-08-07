@@ -872,7 +872,7 @@ body {
 
 /* === CALL CENTER === */
 .call-center-background {
-  background-image: url("../images/common/call-center-bg.jpg");
+  background-image: url("../images/common/service-callcenter-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -1667,7 +1667,6 @@ body {
 .aboutus-top-background p strong {
   color: #0a3380;
 }
-
 /* === ADVANCED-SERVICES === */
 .aboutus-advanced-services-container {
   max-width: 1320px;
@@ -1850,8 +1849,11 @@ body {
 .aboutus-feature-box h4 {
   color: #2ea6f7;
   font-size: 14px;
-  font-weight: 700px;
+  font-weight: 700;
   margin-bottom: 14px;
+}
+.aboutus-feature-box h4:hover {
+  color: #000;
 }
 .aboutus-feature-box p {
   font-family: "Nunito", sans-serif;
@@ -1907,7 +1909,7 @@ body {
   max-width: 1320px;
   margin: 0 auto;
 }
-.aboutus-quality-stuff-container h4 {
+.aboutus-quality-stuff-container > h4 {
   color: #ff9e21;
   font-size: 14px;
   font-weight: 700;
@@ -1990,6 +1992,9 @@ body {
   color: #0a3380;
   font-weight: 700;
   margin-top: 30px;
+}
+.aboutus-profile-card .name:hover {
+  color: #2ea6f7;
 }
 .aboutus-profile-card .position {
   color: #3b4964;
@@ -2184,7 +2189,6 @@ body {
   margin-right: 30px;
 }
 .history-vertical-line {
-  display: block;
   background-color: #ffffff;
   align-self: stretch;
   min-width: 5px;
@@ -2197,6 +2201,9 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+.history-card-container img:hover .history-card h4 {
+  color: #ff9e21;
 }
 .history-card {
   padding: 24px 30px 24px 50px;
@@ -2223,6 +2230,9 @@ body {
 }
 .last-line {
   background-color: transparent;
+}
+.marked-for-orange h4 {
+  color: #ff9e21;
 }
 @media screen and (max-width: 768px) {
   .history-container {
@@ -2378,7 +2388,7 @@ body {
   color: #3b4964;
   font-family: "Nunito", sans-serif;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   line-height: 2;
 }
 .service-info-cards-container {
@@ -2386,6 +2396,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   row-gap: 20px;
+  margin-top: 15px;
 }
 .service-info-icon-group::before {
   content: "";
@@ -2892,17 +2903,17 @@ body {
   margin: 20px 20px 40px;
   text-align: center;
 }
-.aboutus-profile-container {
+.ourteam-profile-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 30px 0 0;
   justify-items: center;
 }
-.aboutus-profile-card {
+.ourteam-profile-card {
   position: relative;
 }
-.aboutus-profile-card > img {
+.ourteam-profile-card > img {
   border-radius: 15px;
   justify-items: center;
 }
@@ -2946,7 +2957,7 @@ body {
   transition: opacity 0.5s ease;
 }
 
-.aboutus-profile-card .plus-dropdown a {
+.ourteam-profile-card .plus-dropdown a {
   height: 40px;
   width: 40px;
   display: flex;
@@ -2955,29 +2966,29 @@ body {
   background-color: #ffffff;
   border-radius: 50%;
 }
-.aboutus-profile-card .plus-dropdown img {
+.ourteam-profile-card .plus-dropdown img {
   height: 20px;
 }
-.aboutus-profile-card .name {
+.ourteam-profile-card .name {
   font-size: 20px;
   color: #0a3380;
   font-weight: 700;
   margin-top: 30px;
 }
-.aboutus-profile-card .position {
+.ourteam-profile-card .position {
   color: #3b4964;
   font-weight: 400;
   margin: 10px 0;
 }
-.aboutus-profile-card .joined-since {
+.ourteam-profile-card .joined-since {
   color: #2ea6f7;
   font-weight: 700;
 }
 @media screen and (max-width: 1200px) {
-  .aboutus-profile-container {
+  .ourteam-profile-container {
     grid-template-columns: repeat(3, 1fr);
   }
-  .aboutus-profile-card {
+  .ourteam-profile-card {
     max-width: 300px;
   }
 }
@@ -2985,13 +2996,13 @@ body {
   .ourteam-container {
     max-width: 788px;
   }
-  .aboutus-profile-container {
+  .ourteam-profile-container {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     margin: 0 auto;
     max-width: 730px;
   }
-  .aboutus-profile-card {
+  .ourteam-profile-card {
     max-width: 350px;
   }
 }
@@ -3001,7 +3012,7 @@ body {
     flex-direction: column;
     max-width: 393px;
   }
-  .aboutus-profile-container {
+  .ourteam-profile-container {
     grid-template-columns: 1fr;
     justify-items: center;
     gap: 60px;
@@ -3048,6 +3059,9 @@ body {
 .faq-top-background p strong {
   color: #0a3380;
 }
+.faq-stats-background .stats-card-label {
+  color: #fff;
+}
 
 .questions-container {
   max-width: 1320px;
@@ -3075,7 +3089,7 @@ body {
   color: #0a3380;
   font-size: 42px;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1;
   margin-bottom: 20px;
 }
 .questions-left-container p {
@@ -3093,6 +3107,7 @@ body {
 .question-line {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   align-items: center;
   padding: 15px 0 23px;
   transition: 0.5s ease;
@@ -3155,7 +3170,13 @@ body {
 .show-answer {
   max-height: 150px;
   opacity: 1;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 1.5s ease, opacity 1.5s ease;
+}
+@media screen and (max-width: 908px) {
+  .question-contents-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 /* ===  FAQ LOGO SLIDER === */
@@ -3245,6 +3266,10 @@ body {
   }
   .support-card {
     max-width: unset;
+  }
+
+  .support-container h3 {
+    font-size: 35px;
   }
 }
 @media screen and (max-width: 480px) {
