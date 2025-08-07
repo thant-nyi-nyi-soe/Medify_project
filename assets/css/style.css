@@ -3258,7 +3258,7 @@ body {
   .support-card {
     flex: 1 1 339px;
     max-width: 394px;
-  }
+  } 
 }
 @media screen and (max-width: 768px) {
   .support-cards-container {
@@ -3277,3 +3277,6 @@ body {
     padding: 20px;
   }
 }
+
+
+/* THIS IS THE TEXT TO TEST GIT PULL*/
