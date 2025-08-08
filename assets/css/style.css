@@ -1895,11 +1895,17 @@ body {
   .man-inthe-circle {
     max-width: 400px;
     padding: 0 40px;
+    object-fit: contain;
   }
 }
 @media screen and (max-width: 446px) {
   .aboutus-features-container img {
     max-width: 340px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .man-inthe-circle {
+    padding: 0;
   }
 }
 
