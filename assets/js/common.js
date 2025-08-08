@@ -1,6 +1,6 @@
 // Your JavaScript code goes here
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("header.html")
+  fetch("./header.html")
     .then((res) => res.text())
     .then((html) => {
       document.querySelector("header").innerHTML = html;
