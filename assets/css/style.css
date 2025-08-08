@@ -470,7 +470,6 @@ body {
   color: white;
   font-weight: bold;
 }
-
 .right-side-ad {
   font-size: 24px;
   color: white;
@@ -709,6 +708,7 @@ body {
   border-radius: 15px;
   padding: 36px;
   max-width: 339px;
+  width: 339%;
 }
 .service-card img {
   max-width: 55px;
@@ -730,14 +730,10 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-  .info-cards-container {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+  
 }
 @media screen and (max-width: 768px) {
   .service-card {
-    min-width: unset;
     max-width: 627px;
   }
 }
@@ -956,13 +952,14 @@ body {
 .our-media-cards-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   padding: 40px 0;
 }
 .our-media-card {
   position: relative;
-
-  min-width: 300px;
+  max-width: 300px;
+  width: 100%;
 }
 .our-media-card img {
   border-radius: 15px;
@@ -994,10 +991,7 @@ body {
     flex-wrap: wrap;
     column-gap: 21px;
   }
-  .our-media-card {
-    min-width: unset;
-    max-width: 300px;
-  }
+  
 }
 /* === CONTACTS PAGE === */
 
@@ -1697,13 +1691,15 @@ body {
 .aboutus-care-cards-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 50px;
 }
 .aboutus-care-card {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 36px;
-  flex: 1 1 394px;
+  max-width: 370px;
+  width: 100%;
   box-shadow: 10px 8px 35px rgba(49, 49, 49, 0.08);
 }
 .aboutus-care-card img {
@@ -1725,15 +1721,7 @@ body {
   line-height: 1.5;
   font-weight: bold;
 }
-@media screen and (max-width: 1024px) {
-  .aboutus-care-cards-container {
-    flex-wrap: wrap;
-  }
-  .aboutus-care-card {
-    flex: 1 1 339px;
-    max-width: 394px;
-  }
-}
+
 @media screen and (max-width: 768px) {
   .aboutus-care-cards-container {
     padding: 20px 60px;
@@ -1928,18 +1916,19 @@ body {
   margin: 20px 20px 40px;
 }
 .aboutus-profile-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   padding: 30px 0 0;
-  justify-items: center;
 }
 .aboutus-profile-card {
   position: relative;
+  max-width: 297px;
+  width: 100%;
 }
 .aboutus-profile-card > img {
   border-radius: 15px;
-  justify-items: center;
 }
 .plus-button {
   height: 40px;
@@ -2012,17 +2001,13 @@ body {
   font-weight: 700;
 }
 @media screen and (max-width: 1200px) {
-  .aboutus-profile-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  
   .aboutus-profile-card {
     max-width: 300px;
   }
 }
 @media screen and (max-width: 1000px) {
-  .aboutus-quality-stuff-container {
-    max-width: 788px;
-  }
+  
   .aboutus-profile-container {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
@@ -2039,8 +2024,6 @@ body {
     max-width: 393px;
   }
   .aboutus-profile-container {
-    grid-template-columns: 1fr;
-    justify-items: center;
     gap: 60px;
   }
   .aboutus-quality-stuff-container h3 {

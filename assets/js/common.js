@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
           plusBtn.classList.remove("plus-to-x");
         });
 
-        const plusDd = plusDds[index]; /* NEW */
+        const plusDd = plusDds[index];
 
         if (plusDd) {
           plusDd.addEventListener("mouseenter", () => {
@@ -245,15 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-
-      /* HISTORY BUTTON ACTIVATE HISCARD CARD TITLE */
+      /* HISTORY BUTTON ACTIVATE HISTORY CARD TITLE */
       const hvl = document.querySelector(".history-vertical-line");
       const hc = document.querySelector(".history-card");
 
       hvl.addEventListener("mouseenter", () => {
         hc.classList.add("marked-for-orange");
       });
-       hvl.addEventListener("mouseleave", () => {
+      hvl.addEventListener("mouseleave", () => {
         hc.classList.remove("marked-for-orange");
       });
     });
