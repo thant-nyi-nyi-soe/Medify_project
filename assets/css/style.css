@@ -227,7 +227,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .show {
-    transform: translate(473px);
+    transform: translateX(473px);
     transition: transform 0.3s ease;
   }
   .no-scroll {
