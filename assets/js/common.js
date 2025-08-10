@@ -38,9 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
           body.classList.remove("no-scroll");
         }
       }
-      //----------------
-
-      //----------------
 
       /* SIDEBAR UNDERLINE ON EVERY PAGE */
       const tabs = document.querySelectorAll(".tab");
@@ -55,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
         tab.addEventListener("click", () => {
           const pageID = tab.id;
 
-          for (let key in pageInfo) {
-            pageInfo[key] = key === pageID;
+          for (let i in pageInfo) {
+            pageInfo[i] = key === pageID;
           }
 
           localStorage.setItem("pageInfo", JSON.stringify(pageInfo));
@@ -165,8 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
         countUp(awardsCounter, 25, 1, 60);
       }
 
-      // --------------------
-
       /* MAKE BACK TO TOP BUTTON DISAPPEAR AT THE TOP OF THE PAGE */
       window.addEventListener("scroll", () => {
         const toTop = document.querySelector(".back-to-top-button");
@@ -250,17 +245,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const hcs = document.querySelectorAll(".history-card");
 
       hvls.forEach((hvl, i) => {
-        
         const hc = hcs[i];
-        
+
         hvl.addEventListener("mouseenter", () => {
           hc.classList.add("marked-for-orange");
         });
         hvl.addEventListener("mouseleave", () => {
           hc.classList.remove("marked-for-orange");
-        })
+        });
       });
-
 
       // hvl.addEventListener("mouseenter", () => {
       //   hc.classList.add("marked-for-orange");
