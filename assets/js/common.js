@@ -246,15 +246,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       /* HISTORY BUTTON ACTIVATE HISTORY CARD TITLE */
-      const hvl = document.querySelector(".history-vertical-line");
-      const hc = document.querySelector(".history-card");
+      const hvls = document.querySelectorAll(".history-vertical-line");
+      const hcs = document.querySelectorAll(".history-card");
 
-      hvl.addEventListener("mouseenter", () => {
-        hc.classList.add("marked-for-orange");
+      hvls.forEach((hvl, i) => {
+        
+        const hc = hcs[i];
+        
+        hvl.addEventListener("mouseenter", () => {
+          hc.classList.add("marked-for-orange");
+        });
+        hvl.addEventListener("mouseleave", () => {
+          hc.classList.remove("marked-for-orange");
+        })
       });
-      hvl.addEventListener("mouseleave", () => {
-        hc.classList.remove("marked-for-orange");
-      });
+
+
+      // hvl.addEventListener("mouseenter", () => {
+      //   hc.classList.add("marked-for-orange");
+      // });
+      // hvl.addEventListener("mouseleave", () => {
+      //   hc.classList.remove("marked-for-orange");
+      // });
     });
 });
 
